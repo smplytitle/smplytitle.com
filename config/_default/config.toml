@@ -13,7 +13,54 @@ copyright = "SmplyTile, Inc. 2022"
   [params.header]
     buttonText = "My Account"
     buttonUrl = "#"
+
+  # Home top intro
+  [params.homeIntro]
+    title = "Welcome to the future of home buying."
+    description = "Our mission, to give our customers the clearest, simplest, and cheapest closing process possible."
+    img_url = "img/home-top.png"
+    btn_left_text = "See how it works"
+    btn_left_url = "#"
+    btn_left_icon = "img/play-icon.svg"
+    btn_right_text = "Calculate your costs"
+    btn_right_url = "#"
+
+  # Home features
+  [params.features]
+    title = "We’re here to help you save money and give you the simplest, safest home buying process. Right from your mobile or desktop."
+    # All features are defined in their own files.
+    # You can find example items at data/features.
   
+  # Home middle info
+  [params.homeInfo]
+    title = "Transparency is key to you understanding everything."
+    description = "We got tired of complicated and unreadable title, escrow and closing documents. So we have made it simpler and clearer so you can understand what you are paying for and why. Oh and did we mention its all digital either on your phone or through our website. That’s simple for sure."
+
+  # Home start
+  [params.homeStart]
+    title = "We’re not your grandfathers or your fathers company. At SmplyTitle we’re re-inventing everything around your home buying experience. Starting with title and escrow."
+    btn_text = "Sign Up"
+    btn_url = "#"
+
+  # Home company
+  [params.company]
+    title = "You’re in good company"
+    description = "SmplyTitle is fully regulated, insured and underwritten by the most trusted names on the planet"
+    [[params.company.logo]]
+      img = "img/rectangle.jpg"
+    [[params.company.logo]]
+      img = "img/rectangle.jpg"
+    [[params.company.logo]]
+      img = "img/rectangle.jpg"
+
+  # Home founder
+  [params.founder]
+    title = "A note from the founder"
+    img = "img/founder.jpg"
+    text = "I didn’t understand anything and felt like I was paying for things I didn’t really need. That was my very first introduction to title and escrow on my very first house purchase. I began to question why everything is so complicated in this process, what are we really paying for and why. Once it became clear to me how utterly antiquated this whole process is, I thought why not build a simple, clear and delighful experience focused on me the buyer. That’s when I decided to start SmplyTitle - The simplest and most cost effecctive way to close on your home."
+    sign = "img/founder-sign.svg"
+    position = "Alex Lyman - CEO & Founder SmplyTitle"
+
   # Footer params
   [params.footer]
     # Social items

@@ -1,0 +1,28 @@
+{{ $title := .Site.Params.homeIntro.title }}
+{{ $description := .Site.Params.homeIntro.description }}
+
+{{ $btnLeftText := .Site.Params.homeIntro.btn_left_text }}
+{{ $btnLeftUrl := .Site.Params.homeIntro.btn_left_url }}
+{{ $btnLeftIcon := .Site.Params.homeIntro.btn_left_icon }}
+
+{{ $btnRightText := .Site.Params.homeIntro.btn_right_text }}
+{{ $btnRightUrl := .Site.Params.homeIntro.btn_right_url }}
+
+{{ $imgUrl := .Site.Params.homeIntro.img_url | absURL }}
+
+<section class="home-top">
+  <div class="container">
+    <h1>{{ $title }}</h1>
+    <p><strong>{{ $description }}</strong></p>
+    <div class="home-top__btns">
+      <a href="{{ $btnLeftUrl }}" class="btn btn-primary">
+        {{ $btnLeftText }}
+        <img class="btn-right-icon" src="{{ $btnLeftIcon }}" alt="">
+      </a>
+      <a href="{{ $btnRightUrl }}" class="btn">{{ $btnRightText }}</a>
+    </div>
+    <div class="home-top__img">
+      <img src="{{ $imgUrl }}" alt="">
+    </div>
+  </div>
+</section>

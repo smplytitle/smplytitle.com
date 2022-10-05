@@ -1,0 +1,16 @@
+{{ $title := .Site.Params.company.title }}
+{{ $description := .Site.Params.company.description }}
+
+{{ $logos := .Site.Params.company.logo }}
+
+<section class="s-company text-center">
+  <div class="container">
+    <h2 class="s-title">{{ $title }}</h2>
+    <h3 class="s-title s-title-sm">{{ $description }}</h3>
+    <div class="company-items">
+      {{ range $logos }}
+        <img class="company-item" src="{{ .img }}" alt="">
+      {{ end }}
+    </div>
+  </div>
+</section>
