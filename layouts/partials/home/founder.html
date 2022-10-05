@@ -1,0 +1,25 @@
+{{ $title := .Site.Params.founder.title }}
+{{ $text := .Site.Params.founder.text }}
+
+{{ $founderImg := .Site.Params.founder.img }}
+{{ $founderSign := .Site.Params.founder.sign }}
+
+{{ $position := .Site.Params.founder.position }}
+
+<section class="s-founder text-center">
+  <div class="container">
+    <h2 class="s-title">{{ $title }}</h2>
+    <div class="founder">
+      <div class="founder__img">
+        <img src="{{ $founderImg }}" alt="">
+      </div>
+      <p class="founder__text">{{ $text }}</p>
+      <div class="founder__bottom">
+        <div class="founder__sign">
+          <img src="{{ $founderSign }}" alt="">
+        </div>
+        <span class="founder__position">{{ $position }}</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+{{ $title := .Site.Params.homeInfo.title }}
+{{ $description := .Site.Params.homeInfo.description }}
+
+<section class="s-home-info text-center">
+  <div class="container">
+    <h2 class="s-title text-center">{{ $title }}</h2>
+    <p>{{ $description }}</p>
+  </div>
+</section>
