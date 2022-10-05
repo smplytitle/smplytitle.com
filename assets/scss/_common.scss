@@ -22,8 +22,16 @@ a {
   transition: all .3s;
 }
 
+img {
+  max-width: 100%;
+}
+
 p {
   line-height: 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
 .btn {
@@ -40,9 +48,11 @@ p {
   font-weight: 500;
   font-size: 17px;
   outline: none;
+  letter-spacing: -0.015em;
   transition: all .3s;
   &:hover {
     background: $accent;
+    color: $white;
   }
   &.btn-sm {
     min-height: 40px;
@@ -56,6 +66,30 @@ p {
     &:hover {
       opacity: .8;
     }
+  }
+  .btn-right-icon {
+    margin: -1px 0 0 10px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.s-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 72px;
+  letter-spacing: -0.015em;
+  color: $black;
+  &.s-title-sm {
+    font-size: 36px;
+    line-height: 50px;
   }
 }
 
