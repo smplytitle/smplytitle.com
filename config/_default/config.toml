@@ -1,0 +1,86 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'SmplyTitle'
+copyright = "SmplyTile, Inc. 2022"
+
+# Site params
+[params]
+  logo = "img/site-logo.svg"
+  # Meta data
+  description = "SmplyTitle is the only title and escrow closing company that connects directly with the buyer and seller. What does that mean? It means you get better pricing, transparency and clear understanding and simply process all with the click of a button."
+
+  # Header params
+  [params.header]
+    buttonText = "My Account"
+    buttonUrl = "#"
+  
+  # Footer params
+  [params.footer]
+    # Social items
+    [[params.footer.social]]
+      img = "img/ellipse.svg"
+      url = "#"
+    [[params.footer.social]]
+      img = "img/ellipse.svg"
+      url = "#"
+    [[params.footer.social]]
+      img = "img/ellipse.svg"
+      url = "#"
+    [[params.footer.social]]
+      img = "img/ellipse.svg"
+      url = "#"
+
+# Menu
+[menu]
+  #Header
+  [[menu.main]]
+    identifier = "buying"
+    name = "Buying"
+    url = "/buying"
+    weight = 1
+  [[menu.main]]
+    identifier = "selling"
+    name = "Selling"
+    url = "/selling"
+    weight = 2
+  [[menu.main]]
+    identifier = "why-smplytitle"
+    name = "Why SmplyTitle"
+    url = "/why-smplytitle"
+    weight = 3
+  [[menu.main]]
+    identifier = "for-realtors"
+    name = "For Realtors"
+    url = "/for-realtors"
+    weight = 4
+  #Footer
+  [[menu.lfooter]]
+    identifier = "mobile-app"
+    name = "Mobile app"
+    url = "/mobile-app"
+    weight = 1
+  [[menu.lfooter]]
+    identifier = "community"
+    name = "Community"
+    url = "/community"
+    weight = 2
+  [[menu.lfooter]]
+    identifier = "company"
+    name = "Company"
+    url = "/company"
+    weight = 3
+  [[menu.rfooter]]
+    identifier = "help-desk"
+    name = "Help desk"
+    url = "/help-desk"
+    weight = 4
+  [[menu.rfooter]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog"
+    weight = 5
+  [[menu.rfooter]]
+    identifier = "resources"
+    name = "Resources"
+    url = "/resources"
+    weight = 6

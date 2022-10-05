@@ -1,0 +1,31 @@
+{{ $logo := .Site.Params.logo | absURL }}
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <nav class="site-footer__nav">
+        <ul>
+          {{ range .Site.Menus.lfooter }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+        <a href="{{ .Site.BaseURL }}" class="site-logo">
+          <img src="{{ $logo }}" alt="SmplyTitle">
+        </a>
+        <ul>
+          {{ range .Site.Menus.rfooter }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <ul class="social-icons">
+        {{ range .Site.Params.Footer.social }}
+          <li><a href="{{ .url }}"><img src="{{ .img }}" alt=""></a></li>
+        {{ end }}
+      </ul>
+      <div class="copyright">&copy;&nbsp;{{ .Site.Copyright }}</div>
+    </div>
+  </div>
+</footer>
