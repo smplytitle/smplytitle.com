@@ -1,133 +1,74 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'SmplyTitle'
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "SmplyTitle"
 copyright = "SmplyTile, Inc. 2022"
 
 # Site params
 [params]
   logo = "img/site-logo.svg"
+  email = "info@smplytitle.com"
   # Meta data
   description = "SmplyTitle is the only title and escrow closing company that connects directly with the buyer and seller. What does that mean? It means you get better pricing, transparency and clear understanding and simply process all with the click of a button."
 
-  # Header params
-  [params.header]
-    buttonText = "My Account"
-    buttonUrl = "#"
-
   # Home top intro
   [params.homeIntro]
-    title = "Welcome to the future of home buying."
-    description = "Our mission, to give our customers the clearest, simplest, and cheapest closing process possible."
-    img_url = "img/home-top.png"
-    btn_left_text = "See how it works"
-    btn_left_url = "#"
-    btn_left_icon = "img/play-icon.svg"
-    btn_right_text = "Calculate your costs"
-    btn_right_url = "#"
-
-  # Home features
-  [params.features]
-    title = "We’re here to help you save money and give you the simplest, safest home buying process. Right from your mobile or desktop."
-    # All features are defined in their own files.
-    # You can find example items at data/features.
-  
-  # Home middle info
-  [params.homeInfo]
-    title = "Transparency is key to you understanding everything."
-    description = "We got tired of complicated and unreadable title, escrow and closing documents. So we have made it simpler and clearer so you can understand what you are paying for and why. Oh and did we mention its all digital either on your phone or through our website. That’s simple for sure."
-
-  # Home start
-  [params.homeStart]
-    title = "We’re not your grandfathers or your fathers company. At SmplyTitle we’re re-inventing everything around your home buying experience. Starting with title and escrow."
-    btn_text = "Sign Up"
+    title = "What the heck is title insurance anyway?"
+    img_url_1 = "img/home-top-img.jpg"
+    img_alt_1 = "For sale"
+    img_url_2 = "img/home-img-1.jpg"
+    img_alt_2 = ""
+    btn_text = "Learn more about title insurnace."
     btn_url = "#"
 
-  # Home company
-  [params.company]
-    title = "You’re in good company"
-    description = "SmplyTitle is fully regulated, insured and underwritten by the most trusted names on the planet"
-    [[params.company.logo]]
-      img = "img/rectangle.jpg"
-    [[params.company.logo]]
-      img = "img/rectangle.jpg"
-    [[params.company.logo]]
-      img = "img/rectangle.jpg"
+  # Home why choose us
+  [params.homeWhyUs]
+    title_left_part = "Why"
+    title_right_part = "SmplyTitle?"
+    img_url = "img/home-img-2.jpg"
+    img_alt = ""
+    text_p_1 = "With so much going on around a home sale, we want to take the confusion and hassle out of the process and save you money."
+    text_p_2 = "By simply providing a few details about the size of a sale, we can instantly give you a comparative analysis of fees from multiple companies. And we can beat them all."
+    btn_text = "Learn how we can help"
+    btn_url = "#"
+    # All features are defined in their own files.
+    # You can find example items at data/features.
 
   # Home founder
   [params.founder]
-    title = "A note from the founder"
-    img = "img/founder.jpg"
-    text = "I didn’t understand anything and felt like I was paying for things I didn’t really need. That was my very first introduction to title and escrow on my very first house purchase. I began to question why everything is so complicated in this process, what are we really paying for and why. Once it became clear to me how utterly antiquated this whole process is, I thought why not build a simple, clear and delighful experience focused on me the buyer. That’s when I decided to start SmplyTitle - The simplest and most cost effecctive way to close on your home."
-    sign = "img/founder-sign.svg"
-    position = "Alex Lyman - CEO & Founder SmplyTitle"
+    note = "Note from the founder"
+    title = "It was too complicated, and too expensive."
+    text_p_1 = "When I bought my first home — the whole process felt so opaque. There were fees upon fees. But for what? So I did a little digging, which confirmed what I suspected. There are lots of inflated fees for processes that are stuck in the middle of last century."
+    text_p_2 = "I started SmplyTitle to bring technology and transparency to the problem, simplifying the process, reducing fees, and empowering people with knowledge to better understand every step in the home-buying journey."
+    author = "- Alex Lyman - CEO & Founder"
+    company_name = "SmplyTitle"
+    img_url = "img/sign.png" 
+    img_alt = "sign"
 
-  # Footer params
-  [params.footer]
-    # Social items
-    [[params.footer.social]]
-      img = "img/ellipse.svg"
-      url = "#"
-    [[params.footer.social]]
-      img = "img/ellipse.svg"
-      url = "#"
-    [[params.footer.social]]
-      img = "img/ellipse.svg"
-      url = "#"
-    [[params.footer.social]]
-      img = "img/ellipse.svg"
-      url = "#"
 
 # Menu
 [menu]
-  #Header
   [[menu.main]]
     identifier = "buying"
     name = "Buying"
     url = "/buying"
     weight = 1
   [[menu.main]]
-    identifier = "selling"
-    name = "Selling"
-    url = "/selling"
-    weight = 2
-  [[menu.main]]
     identifier = "why-smplytitle"
     name = "Why SmplyTitle"
     url = "/why-smplytitle"
+    weight = 2
+  [[menu.main]]
+    identifier = "faq"
+    name = "FAQ"
+    url = "/faq"
     weight = 3
   [[menu.main]]
-    identifier = "for-realtors"
-    name = "For Realtors"
-    url = "/for-realtors"
-    weight = 4
-  #Footer
-  [[menu.lfooter]]
-    identifier = "mobile-app"
-    name = "Mobile app"
-    url = "/mobile-app"
-    weight = 1
-  [[menu.lfooter]]
-    identifier = "community"
-    name = "Community"
-    url = "/community"
-    weight = 2
-  [[menu.lfooter]]
-    identifier = "company"
-    name = "Company"
-    url = "/company"
-    weight = 3
-  [[menu.rfooter]]
-    identifier = "help-desk"
-    name = "Help desk"
-    url = "/help-desk"
-    weight = 4
-  [[menu.rfooter]]
     identifier = "blog"
     name = "Blog"
     url = "/blog"
-    weight = 5
-  [[menu.rfooter]]
-    identifier = "resources"
-    name = "Resources"
-    url = "/resources"
-    weight = 6
+    weight = 4
+  [[menu.main]]
+    identifier = "contact-us"
+    name = "Contact us"
+    url = "/contacts"
+    weight = 4
