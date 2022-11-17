@@ -1,31 +1,28 @@
 {{ $logo := .Site.Params.logo | absURL }}
+{{ $email := .Site.Params.email }}
 
-<footer class="site-footer">
+<footer class="site-footer {{ if .IsHome }}light{{ else }}grey{{ end }}">
   <div class="container">
-    <div class="site-footer__top">
-      <nav class="site-footer__nav">
-        <ul>
-          {{ range .Site.Menus.lfooter }}
-            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
+    <div class="site-footer__wrap">
+      <div class="site-footer__left">
         <a href="{{ .Site.BaseURL }}" class="site-logo">
           <img src="{{ $logo }}" alt="SmplyTitle">
         </a>
-        <ul>
-          {{ range .Site.Menus.rfooter }}
-            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
-      </nav>
-    </div>
-    <div class="site-footer__bottom">
-      <ul class="social-icons">
-        {{ range .Site.Params.Footer.social }}
-          <li><a href="{{ .url }}"><img src="{{ .img }}" alt=""></a></li>
-        {{ end }}
-      </ul>
-      <div class="copyright">&copy;&nbsp;{{ .Site.Copyright }}</div>
+        <a href="mailto:{{ $email }}" class="site-footer__email">{{ $email }}</a>
+        <div class="copyright">&copy;&nbsp;{{ .Site.Copyright }}</div>
+      </div>
+      <div class="site-footer__right">
+        <nav class="site-footer__nav">
+          <ul>
+            {{ range .Site.Menus.main }}
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
 </footer>
+
+{{ $script := resources.Get "js/script.js" | minify }}
+<script src="{{ $script.Permalink }}"></script>

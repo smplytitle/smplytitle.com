@@ -1,0 +1,40 @@
+{{ $titleLeftPart := .Site.Params.homeWhyUs.title_left_part }}
+{{ $titleRightPart := .Site.Params.homeWhyUs.title_right_part }}
+
+{{ $imgUrl := .Site.Params.homeWhyUs.img_url | absURL }}
+{{ $imgAlt := .Site.Params.homeWhyUs.img_alt }}
+
+{{ $textP1 := .Site.Params.homeWhyUs.text_p_1 }}
+{{ $textP2 := .Site.Params.homeWhyUs.text_p_2 }}
+
+{{ $btnText := .Site.Params.homeWhyUs.btn_text }}
+{{ $btnUrl := .Site.Params.homeWhyUs.btn_url }}
+
+<section class="s-why-us">
+  <div class="container">
+    <h2 class="s-title-lg">{{ $titleLeftPart }} <span class="text-accent">{{ $titleRightPart }}</span></h2>
+    <div class="s-why-us__wrap">
+      <div class="s-why-us__left">
+        <img src="{{ $imgUrl }}" alt="{{ $imgAlt }}">
+      </div>
+      <div class="s-why-us__right">
+        <div class="s-why-us__text">
+          <p>
+            {{ $textP1 }}
+          </p>
+          <p>
+            {{ $textP2 }}
+          </p>
+        </div>
+        <div class="s-why-us__controls">
+          <div class="s-why-us__search">
+            {{ partial "common/search.html" . }}
+          </div>
+          <a href="{{ $btnUrl }}" class="btn btn-primary btn-rounded">
+            {{ $btnText }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

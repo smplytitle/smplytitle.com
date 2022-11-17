@@ -1,13 +1,13 @@
 {{ $logo := .Site.Params.logo | absURL }}
-{{ $btnUrl := .Site.Params.Header.buttonUrl | absURL }}
-{{ $btnText := .Site.Params.Header.buttonText }}
 
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container">
     <div class="site-header__left">
       <a href="{{ .Site.BaseURL }}" class="site-logo">
         <img src="{{ $logo }}" alt="SmplyTitle">
       </a>
+    </div>
+    <div class="site-header__right">
       <nav class="site-header__nav">
         <ul>
           {{ range .Site.Menus.main }}
@@ -15,9 +15,6 @@
           {{ end }}
         </ul>
       </nav>
-    </div>
-    <div class="site-header__right">
-      <a href="{{ $btnUrl }}" class="btn btn-primary btn-sm">{{ $btnText }}</a>
     </div>
   </div>
 </header>

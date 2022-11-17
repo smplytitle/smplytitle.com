@@ -1,24 +1,29 @@
 {{ $title := .Site.Params.founder.title }}
-{{ $text := .Site.Params.founder.text }}
+{{ $note := .Site.Params.founder.note }}
 
-{{ $founderImg := .Site.Params.founder.img }}
-{{ $founderSign := .Site.Params.founder.sign }}
+{{ $imgUrl := .Site.Params.founder.img_url | absURL }}
+{{ $imgAlt := .Site.Params.founder.img_alt }}
 
-{{ $position := .Site.Params.founder.position }}
+{{ $textP1 := .Site.Params.founder.text_p_1 }}
+{{ $textP2 := .Site.Params.founder.text_p_2 }}
 
-<section class="s-founder text-center">
+{{ $author := .Site.Params.founder.author }}
+{{ $company_name := .Site.Params.founder.company_name }}
+
+
+<section class="s-founder">
   <div class="container">
-    <h2 class="s-title">{{ $title }}</h2>
-    <div class="founder">
-      <div class="founder__img">
-        <img src="{{ $founderImg }}" alt="">
-      </div>
-      <p class="founder__text">{{ $text }}</p>
-      <div class="founder__bottom">
-        <div class="founder__sign">
-          <img src="{{ $founderSign }}" alt="">
+    <div class="s-founder__wrap">
+      <span class="s-founder__note">{{ $note }}</span>
+      <h2 class="s-title-md">{{ $title }}</h2>
+      <p class="s-founder__text">{{ $textP1 }}</p>
+      <p class="s-founder__text">{{ $textP2 }}</p>
+      <div class="s-founder__details">
+        <span class="s-founder__details-name">{{ $author }}</span>
+        <span class="s-founder__details-company">{{ $company_name }}</span>
+        <div class="s-founder__details-sign">
+          <img src="{{ $imgUrl }}" alt="{{ $imgAlt }}">
         </div>
-        <span class="founder__position">{{ $position }}</span>
       </div>
     </div>
   </div>
