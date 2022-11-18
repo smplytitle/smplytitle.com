@@ -1,0 +1,13 @@
+{{ $title := .Site.Params.trust.title }}
+{{ $descr := .Site.Params.trust.description }}
+
+{{ $btnText := .Site.Params.trust.btn_text }}
+{{ $btnUrl := .Site.Params.trust.btn_url }}
+
+<section class="s-trust">
+  <div class="container">
+    <h2 class="s-title-lg">{{ $title }}</h2>
+    <p class="s-trust__descr">{{ $descr | safeHTML }}</p>
+    <a href="{{ $btnUrl }}" class="btn btn-purple-light btn-rounded">{{ $btnText }}</a>
+  </div>
+</section>
