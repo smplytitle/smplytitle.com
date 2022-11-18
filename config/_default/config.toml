@@ -44,6 +44,56 @@ copyright = "SmplyTile, Inc. 2022"
     img_url = "img/sign.png" 
     img_alt = "sign"
 
+  # Home costs
+  [params.costs]
+    title = "Compare your costs"
+    note = "Approximate costs based on home purchase price of $500,000"
+    [[params.costs.item]]
+      title = "SmplyTitle Costs"
+      price = "$2,395"
+      width = "55%"
+    [[params.costs.item]]
+      title = "First American Title Costs"
+      price = "$3,395"
+      width = "85%"
+    [[params.costs.item]]
+      title = "Old Republic Costs"
+      price = "$3,195"
+      width = "75%"
+    [[params.costs.item]]
+      title = "Stewart Title Costs"
+      price = "$2,995"
+      width = "65%"
+  
+  # Home trust
+  [params.trust]
+    title = "Transparency is trust"
+    description = "We got tired of complicated and unreadable title, escrow and closing documents. So we have made it simpler and clearer so <span>you can understand what you are paying for and why.</span>"
+    btn_text = "Sign up for more news from us."
+    btn_url = "#"
+
+  # Home about company
+  [params.about]
+    title = "We’re not your father’s company or your grandfathers."
+    description = "At <span>SmplyTitle</span> we’re re-inventing everything around your home buying experience. Starting with title. How you ask? We’re in the all digital, easy all the time frame of mind."
+    btn_text = "Learn more about our technology"
+    btn_url = "#"
+    big_img = "img/home-img-3.jpg"
+    big_img_alt = ""
+    small_img = "img/home-img-4.jpg"
+    small_img_alt = ""
+  
+  # Home partners
+  [params.partners]
+    title_left_part = "You’re in"
+    title_right_part = "good hands"
+    description = "SmplyTitle is fully regulated, insured and underwritten by the most trusted names on the planet."
+    [[params.partners.item]]
+      img_url = "img/pt-img-1.png"
+      img_alt = ""
+    [[params.partners.item]]
+      img_url = "img/pt-img-2.png"
+      img_alt = ""
 
 # Menu
 [menu]
