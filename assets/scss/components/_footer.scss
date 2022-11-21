@@ -19,6 +19,13 @@
     justify-content: space-between;
     padding: 67px 71px 31px 66px;
     border-radius: 24px;
+    @include media-lte(desktop) {
+      padding: 50px 40px 35px;
+    }
+    @include media-lte(tablet) {
+      padding: 40px 25px 20px;
+      flex-wrap: wrap;
+    }
     #{$root}.light & {
       background-color: $white;
     }
@@ -28,14 +35,57 @@
     }
   }
 
+  // .site-footer__left
+
+  &__left {
+    @include media-lte(tablet) {
+      width: 100%;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    @include media-lte(tablet-xs) {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+
+  // .site-footer__right
+
+  &__right {
+    @include media-lte(tablet) {
+      width: 100%;
+    }
+  }
+
   // .site-footer__nav
 
   &__nav {
     ul {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      @include media-lte(tablet) {
+        justify-content: center;
+      }
+      @include media-lte(tablet) {
+        justify-content: flex-start;
+      }
       li {
         margin-left: 60px;
+        @include media-lte(desktop) {
+          margin-left: 35px;
+        }
+        @include media-lte(tablet) {
+          margin-bottom: 15px;
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        @include media-lte(tablet) {
+          margin-left: 0;
+        }
         a {
           font-weight: 500;
           font-size: 14px;
@@ -60,6 +110,9 @@
     line-height: 18px;
     font-weight: 400;
     color: $black-2;
+    @include media-lte(tablet) {
+      margin-top: 10px;
+    }
     &:hover {
       color: $accent;
     }

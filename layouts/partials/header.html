@@ -8,13 +8,26 @@
       </a>
     </div>
     <div class="site-header__right">
-      <nav class="site-header__nav">
-        <ul>
-          {{ range .Site.Menus.main }}
-            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
-      </nav>
+      <div class="site-header__menu" id="header-menu">
+        <div class="backdrop" id="header-menu-backdrop"></div>
+        <nav class="site-header__nav">
+          <div class="is-active site-header__hamburger hamburger hamburger--slider" id="header-menu-close">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+          <ul>
+            {{ range .Site.Menus.main }}
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__hamburger hamburger hamburger--slider" id="header-menu-open">
+        <div class="hamburger-box">
+          <div class="hamburger-inner"></div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
