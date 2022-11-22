@@ -1,0 +1,24 @@
+<section class="s-faq-items">
+  <div class="container">
+    <div class="s-faq-items__wrap">
+      {{ range .Params.items }}
+        <div class="faq-item">
+          <div class="smply-accordion faq-accordion">
+            <div class="faq-accordion__inner">
+              <div class="faq-accordion__icon">
+                {{ readFile .icon | safeHTML }}
+              </div>
+              <h3 class="faq-accordion__title">{{ .question }}</h3>
+              <div class="faq-accordion__arrow">
+                {{ readFile "static/img/icons/arrow-down-icon.svg" | safeHTML }}
+              </div>
+            </div>
+          </div>
+          <div class="smply-accordion-panel faq-accordion-panel">
+            <p>{{ .answer }}</p>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
