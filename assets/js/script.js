@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Mobile menu
-  const headerMenu = document.getElementById('header-menu');
   const headerMenuOpenBtn = document.getElementById('header-menu-open');
   const headerMenuCloseBtn = document.getElementById('header-menu-close');
   const headerMenuBackdrop = document.getElementById('header-menu-backdrop');
@@ -21,11 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
   headerMenuBackdrop.addEventListener('click', closeMobileMenu);
 
   function closeMobileMenu() {
-    headerMenu.classList.remove('menu-active');
+    header.classList.remove('menu-active');
   }
 
   function openMobileMenu() {
-    headerMenu.classList.add('menu-active');
+    header.classList.add('menu-active');
+    
   }
 
   // Accordion

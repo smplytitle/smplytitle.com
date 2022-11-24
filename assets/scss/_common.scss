@@ -391,9 +391,21 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 9;
+  z-index: 8;
   background-color: rgba($black-2, .6);
   opacity: 0;
   visibility: hidden;
-  transition: opacity .3s ease-in-out;
+  transition: all .2s;
+}
+
+.hidden-desktop {
+  @include media-gte(tablet) {
+    display: none!important;
+  }
+}
+
+.hidden-mobile {
+  @include media-lt(tablet) {
+    display: none!important;
+  }
 }
