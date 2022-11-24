@@ -1,0 +1,41 @@
+<section class="s-posts">
+  <div class="container">
+    <div class="s-posts__wrap">
+      {{ range .Pages }}
+        <a href="{{ .Permalink | absURL }}" class="post-item">
+          <div class="post-item__left">
+            <div class="post-item__img hidden-desktop">
+              <img src="{{ .Params.postImage }}" alt="Post image">
+            </div>
+            <h2 class="post-item__title">{{ .Title }}</h2>
+            <div class="post-item__descr hidden-desktop">
+              <p>
+                {{ .Description | plainify }}
+              </p>
+            </div>
+            <div class="post-item__group">
+              <div class="post-item__author">
+                <div class="post-item__author-img">
+                  <img src="{{ .Params.authorImg }}" alt="{{ .Params.author }}">
+                </div>
+                <span class="post-item__author-name">{{ .Params.author }}</span>
+              </div>
+              <span class="post-item__time-read hidden-desktop">{{ .Params.timeRead }}</span>
+            </div>
+          </div>
+          <div class="post-item__right">
+            <div class="post-item__descr hidden-mobile">
+              <p>
+                {{ .Description | plainify }}
+              </p>
+              <span class="post-item__time-read">{{ .Params.timeRead }}</span>
+            </div>
+            <div class="post-item__img hidden-mobile">
+              <img src="{{ .Params.postImage }}" alt="Post image">
+            </div>
+          </div>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
