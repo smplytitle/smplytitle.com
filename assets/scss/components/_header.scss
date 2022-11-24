@@ -3,21 +3,33 @@
 
   padding: 40px 0;
   width: 100%;
-  background-color: $white;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9;
-  transition: all .3s ease-in-out;
+  transition: padding .3s, box-shadow .3s, background-color .3s;
   @include media-lte(tablet) {
     padding: 30px 0;
   }
 
   &.active {
     padding: 25px 0;
+    background-color: $white;
     box-shadow: 0 5px 10px rgba($grey, 0.1);
     @include media-lte(tablet) {
       padding: 18px 0;
+    }
+  }
+
+  &.menu-active {
+    #{$root}__menu {
+      .backdrop {
+        opacity: 1;
+        visibility: visible;
+      }
+      #{$root}__nav {
+        right: 0;
+      }
     }
   }
 
@@ -58,7 +70,7 @@
       padding: 35px 20px;
       box-shadow: 0 5px 10px rgba($grey, 0.1);
       z-index: 99;
-      transition: all .3s ease-in-out;
+      transition: right .3s ease-in-out;
     }
     ul {
       display: flex;
@@ -69,6 +81,11 @@
       }
       li {
         margin-left: 60px;
+        &.active {
+          a {
+            color: $accent;
+          }
+        }
         @include media-lte(desktop) {
           margin-left: 40px;
         }
@@ -104,13 +121,7 @@
 
   &__menu {
     &.menu-active {
-      .backdrop {
-        opacity: 1;
-        visibility: visible;
-      }
-      #{$root}__nav {
-        right: 0;
-      }
+      
     }
   }
 

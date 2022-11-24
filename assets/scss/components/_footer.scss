@@ -78,6 +78,11 @@
       }
       li {
         margin-left: 60px;
+        &.active {
+          a {
+            color: $accent;
+          }
+        }
         @include media-lte(desktop) {
           margin-left: 35px;
         }
