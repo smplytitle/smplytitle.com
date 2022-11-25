@@ -1,0 +1,20 @@
+<section class="s-why-first-info s-scrollable">
+  <div class="container">
+    <div class="s-why-first-info__wrap">
+      <div class="s-why-first-info__left">
+        <img src="{{ .Params.firstInfoSection.img }}" alt="Image">
+      </div>
+      <div class="s-why-first-info__right">
+        <h3 class="s-why-first-info__title">{{ .Params.firstInfoSection.title }}</h3>
+        <p class="s-why-first-info__text">
+          {{ .Params.firstInfoSection.text }}
+        </p>
+      </div>
+    </div>
+    <div class="s-why-first-info__arrows">
+      <div class="arrows-control arrows-scroll-btn">
+        {{ readFile "static/img/icons/arrows-icon.svg" | safeHTML }}
+      </div>
+    </div>
+  </div>
+</section>

@@ -36,12 +36,24 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.toggle('active');
 
       const panel = this.nextElementSibling;
-      console.log(panel);
+
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
         panel.style.maxHeight = panel.scrollHeight + 'px';
       }
+    });
+  }
+
+  // Scroll to next section
+  const scrollBtn = document.getElementsByClassName('arrows-scroll-btn');
+
+  for (let i = 0; i < scrollBtn.length; i++) {
+    scrollBtn[i].addEventListener('click', function() {
+      const parent = this.closest('.s-scrollable');
+      const nextSection = parent.nextElementSibling;
+
+      if(nextSection) nextSection.scrollIntoView({behavior: 'smooth'});
     });
   }
 });
