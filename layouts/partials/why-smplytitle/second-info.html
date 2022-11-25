@@ -1,0 +1,20 @@
+<section class="s-why-second-info s-scrollable">
+  <div class="container">
+    <div class="s-why-second-info__wrap">
+      <div class="s-why-second-info__left">
+        <div class="s-why-second-info__text">
+          <p>{{ .Params.secondInfoSection.text }}</p>
+          <span>{{ .Params.secondInfoSection.author }}</span>
+        </div>
+      </div>
+      <div class="s-why-second-info__right">
+        <img src="{{ .Params.secondInfoSection.img }}" alt="Image">
+      </div>
+    </div>
+    <div class="s-why-second-info__arrows">
+      <div class="arrows-control arrows-scroll-btn">
+        {{ readFile "static/img/icons/arrows-icon.svg" | safeHTML }}
+      </div>
+    </div>
+  </div>
+</section>

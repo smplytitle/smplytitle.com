@@ -1,0 +1,11 @@
+<section class="s-why-top s-scrollable">
+  <div class="container">
+    <h1 class="s-why-top__title"><strong>{{ .Title | safeHTML }}</strong></h1>
+    <p class="s-why-top__descr">{{ .Description }}</p>
+    <div class="s-why-top__arrows">
+      <div class="arrows-control arrows-scroll-btn">
+        {{ readFile "static/img/icons/arrows-icon.svg" | safeHTML }}
+      </div>
+    </div>
+  </div>
+</section>

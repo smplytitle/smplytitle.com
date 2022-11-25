@@ -409,3 +409,32 @@ h1, h2, h3, h4, h5, h6 {
     display: none!important;
   }
 }
+
+.arrows-control {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: MoveUpDown 1.5s linear infinite;
+  svg {
+    path {
+      transition: all .3s;
+    }
+  }
+  &:hover {
+    path {
+      fill: $accent;
+    }
+  }
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
