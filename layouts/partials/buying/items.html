@@ -1,0 +1,17 @@
+<section class="s-buying-items">
+  <div class="container">
+    <div class="s-buying-items__wrap">
+      {{ range .Params.items }}
+      <div class="buying-item">
+        <div class="buying-item__icon">
+          <img src="{{ .icon }}" alt="">
+        </div>
+        <div class="buying-item__content">
+          <h3 class="buying-item__title">{{ .title }}</h3>
+          <p class="buying-item__text">{{ .text }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
