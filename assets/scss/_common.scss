@@ -39,6 +39,32 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+.form-control {
+  margin-bottom: 36px;
+  @include media-lte(tablet) {
+    margin-bottom: 25px;
+  }
+}
+
+.input-control {
+  width: 100%;
+  padding: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: $font-main;
+  color: $black-4;
+  outline: none;
+  background: $grey-light;
+  border-radius: 8px;
+  border: 0;
+  appearance: none;
+  &::placeholder {
+    opacity: 1;
+    color: $grey-light-2;
+  }
+}
+
 .btn {
   min-height: 50px;
   display: inline-flex;
@@ -52,11 +78,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   font-size: 14px;
   line-height: 1;
+  cursor: pointer;
   outline: none;
+  border: 0;
   transition: all .3s;
   &.btn-sm {
     min-height: 40px;
-    border: 0;
     padding: 0 20px;
     font-size: 15px;
   }
@@ -64,6 +91,13 @@ h1, h2, h3, h4, h5, h6 {
     background: $accent;
     &:hover {
       background: $purple;
+    }
+  }
+  &.btn-black {
+    background: $black-2;
+    color: $grey-light-1;
+    &:hover {
+      background: $accent;
     }
   }
   &.btn-purple-light {
