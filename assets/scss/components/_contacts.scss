@@ -1,0 +1,40 @@
+/* Contacts section
+  ========================================================================== */
+
+.s-contacts {
+  position: relative;
+  padding: 224px 0 128px;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 172px;
+    left: 0;
+    width: 550px;
+    height: 615px;
+    background: url("/img/figure-img-9.svg") no-repeat right center;
+  }
+  // .s-contacts__title
+
+  &__title {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 70px;
+    letter-spacing: -0.015em;
+    color: $black-2;
+  }
+
+  // .s-contacts__descr
+
+  &__descr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $grey;
+  }
+}
+
+.contact-form {
+  margin-top: 24px;
+}
