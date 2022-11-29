@@ -2,6 +2,8 @@
   ========================================================================== */
 
 .s-contacts {
+  $root: &;
+
   position: relative;
   padding: 224px 0 128px;
   @include media-lte(tablet) {
@@ -16,6 +18,26 @@
     width: 550px;
     height: 615px;
     background: url("/img/figure-img-9.svg") no-repeat right center;
+  }
+
+  &.get-in-touch {
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 116px;
+      left: 0;
+      width: 572px;
+      height: 473px;
+      background: url("/img/figure-img-10.svg") no-repeat left center;
+    }
+    #{$root}__title {
+      &::before {
+        top: -70px;
+        left: -210px;
+        transform: rotate(-6deg);
+      }
+    }
   }
 
   // .s-contacts__wrap
