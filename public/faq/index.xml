@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frequently &lt;span&gt;asked questions&lt;/span&gt; on SmplyTitle</title>
+    <link>http://example.org/faq/</link>
+    <description>Recent content in Frequently &lt;span&gt;asked questions&lt;/span&gt; on SmplyTitle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>SmplyTile, Inc. 2022</copyright>
+    <lastBuildDate>Tue, 22 Nov 2022 12:07:59 +0200</lastBuildDate><atom:link href="http://example.org/faq/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
