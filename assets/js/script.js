@@ -56,4 +56,22 @@ document.addEventListener('DOMContentLoaded', function() {
       if(nextSection) nextSection.scrollIntoView({behavior: 'smooth'});
     });
   }
+
+  // Form submiting
+
+  async function submit() {
+    try {
+
+    } catch(error) {
+      console.log(error);
+    }
+  }
+
+  const contactForm = document.getElementById('contacts-form');
+
+  contactForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    
+  });
 });
