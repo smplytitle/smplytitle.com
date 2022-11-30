@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://cosmic-crostata-81ad2e.netlify.app"
 languageCode = "en-us"
 title = "SmplyTitle"
 copyright = "SmplyTile, Inc. 2022"
