@@ -1,86 +1,124 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'SmplyTitle'
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "SmplyTitle"
 copyright = "SmplyTile, Inc. 2022"
 
 # Site params
 [params]
   logo = "img/site-logo.svg"
+  email = "info@smplytitle.com"
   # Meta data
   description = "SmplyTitle is the only title and escrow closing company that connects directly with the buyer and seller. What does that mean? It means you get better pricing, transparency and clear understanding and simply process all with the click of a button."
 
-  # Header params
-  [params.header]
-    buttonText = "My Account"
-    buttonUrl = "#"
+  # Home top intro
+  [params.homeIntro]
+    title = "What the heck is title insurance anyway?"
+    img_url_1 = "img/home-top-img.jpg"
+    img_alt_1 = "For sale"
+    img_url_2 = "img/home-img-1.jpg"
+    img_alt_2 = ""
+    btn_text = "Learn more about title insurnace."
+    btn_url = "#"
+
+  # Home why choose us
+  [params.homeWhyUs]
+    title_left_part = "Why"
+    title_right_part = "SmplyTitle?"
+    img_url = "img/home-img-2.jpg"
+    img_alt = ""
+    text_p_1 = "With so much going on around a home sale, we want to take the confusion and hassle out of the process and save you money."
+    text_p_2 = "By simply providing a few details about the size of a sale, we can instantly give you a comparative analysis of fees from multiple companies. And we can beat them all."
+    btn_text = "Learn how we can help"
+    btn_url = "#"
+    # All features are defined in their own files.
+    # You can find example items at data/features.
+
+  # Home founder
+  [params.founder]
+    note = "Note from the founder"
+    title = "It was too complicated, and too expensive."
+    text_p_1 = "When I bought my first home — the whole process felt so opaque. There were fees upon fees. But for what? So I did a little digging, which confirmed what I suspected. There are lots of inflated fees for processes that are stuck in the middle of last century."
+    text_p_2 = "I started SmplyTitle to bring technology and transparency to the problem, simplifying the process, reducing fees, and empowering people with knowledge to better understand every step in the home-buying journey."
+    author = "- Alex Lyman - CEO & Founder"
+    company_name = "SmplyTitle"
+    img_url = "img/sign.png" 
+    img_alt = "sign"
+
+  # Home costs
+  [params.costs]
+    title = "Compare your costs"
+    note = "Approximate costs based on home purchase price of $500,000"
+    [[params.costs.item]]
+      title = "SmplyTitle Costs"
+      price = "$2,395"
+      width = "55%"
+    [[params.costs.item]]
+      title = "First American Title Costs"
+      price = "$3,395"
+      width = "85%"
+    [[params.costs.item]]
+      title = "Old Republic Costs"
+      price = "$3,195"
+      width = "75%"
+    [[params.costs.item]]
+      title = "Stewart Title Costs"
+      price = "$2,995"
+      width = "65%"
   
-  # Footer params
-  [params.footer]
-    # Social items
-    [[params.footer.social]]
-      img = "img/ellipse.svg"
-      url = "#"
-    [[params.footer.social]]
-      img = "img/ellipse.svg"
-      url = "#"
-    [[params.footer.social]]
-      img = "img/ellipse.svg"
-      url = "#"
-    [[params.footer.social]]
-      img = "img/ellipse.svg"
-      url = "#"
+  # Home trust
+  [params.trust]
+    title = "Transparency is trust"
+    description = "We got tired of complicated and unreadable title, escrow and closing documents. So we have made it simpler and clearer so <span>you can understand what you are paying for and why.</span>"
+    btn_text = "Sign up for more news from us."
+    btn_url = "#"
+
+  # Home about company
+  [params.about]
+    title = "We’re not your father’s company or your grandfathers."
+    description = "At <span>SmplyTitle</span> we’re re-inventing everything around your home buying experience. Starting with title. How you ask? We’re in the all digital, easy all the time frame of mind."
+    btn_text = "Learn more about our technology"
+    btn_url = "#"
+    big_img = "img/home-img-3.jpg"
+    big_img_alt = ""
+    small_img = "img/home-img-4.jpg"
+    small_img_alt = ""
+  
+  # Home partners
+  [params.partners]
+    title_left_part = "You’re in"
+    title_right_part = "good hands"
+    description = "SmplyTitle is fully regulated, insured and underwritten by the most trusted names on the planet."
+    [[params.partners.item]]
+      img_url = "img/pt-img-1.png"
+      img_alt = ""
+    [[params.partners.item]]
+      img_url = "img/pt-img-2.png"
+      img_alt = ""
 
 # Menu
 [menu]
-  #Header
   [[menu.main]]
     identifier = "buying"
     name = "Buying"
     url = "/buying"
     weight = 1
   [[menu.main]]
-    identifier = "selling"
-    name = "Selling"
-    url = "/selling"
-    weight = 2
-  [[menu.main]]
     identifier = "why-smplytitle"
     name = "Why SmplyTitle"
     url = "/why-smplytitle"
+    weight = 2
+  [[menu.main]]
+    identifier = "faq"
+    name = "FAQ"
+    url = "/faq"
     weight = 3
   [[menu.main]]
-    identifier = "for-realtors"
-    name = "For Realtors"
-    url = "/for-realtors"
-    weight = 4
-  #Footer
-  [[menu.lfooter]]
-    identifier = "mobile-app"
-    name = "Mobile app"
-    url = "/mobile-app"
-    weight = 1
-  [[menu.lfooter]]
-    identifier = "community"
-    name = "Community"
-    url = "/community"
-    weight = 2
-  [[menu.lfooter]]
-    identifier = "company"
-    name = "Company"
-    url = "/company"
-    weight = 3
-  [[menu.rfooter]]
-    identifier = "help-desk"
-    name = "Help desk"
-    url = "/help-desk"
-    weight = 4
-  [[menu.rfooter]]
     identifier = "blog"
     name = "Blog"
     url = "/blog"
-    weight = 5
-  [[menu.rfooter]]
-    identifier = "resources"
-    name = "Resources"
-    url = "/resources"
-    weight = 6
+    weight = 4
+  [[menu.main]]
+    identifier = "contact-us"
+    name = "Contact us"
+    url = "/contacts"
+    weight = 4

@@ -1,23 +1,35 @@
 {{ $logo := .Site.Params.logo | absURL }}
-{{ $btnUrl := .Site.Params.Header.buttonUrl | absURL }}
-{{ $btnText := .Site.Params.Header.buttonText }}
 
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container">
     <div class="site-header__left">
       <a href="{{ .Site.BaseURL }}" class="site-logo">
         <img src="{{ $logo }}" alt="SmplyTitle">
       </a>
-      <nav class="site-header__nav">
-        <ul>
-          {{ range .Site.Menus.main }}
-            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
-      </nav>
     </div>
     <div class="site-header__right">
-      <a href="{{ $btnUrl }}" class="btn btn-primary btn-sm">{{ $btnText }}</a>
+      <div class="site-header__menu">
+        <div class="backdrop" id="header-menu-backdrop"></div>
+        <nav class="site-header__nav">
+          <div class="is-active site-header__hamburger hamburger hamburger--slider" id="header-menu-close">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+          <ul>
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+              {{ $active := in $currentPage.RelPermalink .URL }}
+              <li class="{{ if $active }}active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__hamburger hamburger hamburger--slider" id="header-menu-open">
+        <div class="hamburger-box">
+          <div class="hamburger-inner"></div>
+        </div>
+      </div>
     </div>
   </div>
 </header>

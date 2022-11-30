@@ -1,0 +1,20 @@
+{{ $titleLeftPart := .Site.Params.partners.title_left_part }}
+{{ $titleRightPart := .Site.Params.partners.title_right_part }}
+
+{{ $descr := .Site.Params.partners.description }}
+
+{{ $partnersItems := .Site.Params.partners.item }}
+
+<section class="s-partners">
+  <div class="container">
+    <h2 class="s-title-lg">{{ $titleLeftPart }} <span class="text-purple text-italic">{{ $titleRightPart }}</span></h2>
+    <p class="s-partners__descr">{{ $descr | safeHTML }}</p>
+    <div class="partners-items">
+      {{ range $partnersItems }}
+        <div class="partner-item">
+          <img src="{{ .img_url }}" alt="{{ .img_alt }}">
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

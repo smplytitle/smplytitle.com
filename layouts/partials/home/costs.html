@@ -1,0 +1,38 @@
+{{ $title := .Site.Params.costs.title }}
+{{ $note := .Site.Params.costs.note }}
+
+{{ $costItems := .Site.Params.costs.item }}
+
+<section class="s-costs">
+  <div class="container">
+    <h2 class="s-title-md">{{ $title }}</h2>
+    <div class="costs-wrap">
+      <div class="costs-wrap__bar">
+        <img src="img/dots-bar-icon.svg" alt="">
+      </div>
+      <div class="costs-wrap__content">
+        <div class="costs-wrap__note">
+          <span>{{ $note }}</span>
+        </div>
+        <div class="costs-wrap__items">
+          {{ range $costItems }}
+            <div class="costs-item">
+              <h5 class="costs-item__title">{{ .title }}</h5>
+              <div class="costs-item__progress-bar">
+                <div class="costs-item__progress-bar-fill" style="width: {{.width}}">{{ .price }}</div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+      <div class="costs-wrap__question-card">
+        {{ partial "common/question-card.html" (
+          dict "imgPath" "img/person-img-2.jpg"
+          "text" "Want a specific property title estimate?"
+          "btnUrl" "#"
+          "btnText" "Calculate now"
+        ) }}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,40 +1,105 @@
 .site-header {
-  padding: 10px 0;
+  $root: &;
+
+  padding: 40px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  transition: padding .3s, box-shadow .3s, background-color .3s;
+  @include media-lte(tablet) {
+    padding: 30px 0;
+  }
+
+  &.active {
+    padding: 25px 0;
+    background-color: $white;
+    box-shadow: 0 5px 10px rgba($grey, 0.1);
+    @include media-lte(tablet) {
+      padding: 18px 0;
+    }
+  }
+
+  &.menu-active {
+    #{$root}__menu {
+      .backdrop {
+        opacity: 1;
+        visibility: visible;
+      }
+      #{$root}__nav {
+        right: 0;
+      }
+    }
+  }
 
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: static;
   }
 
   .site-logo {
-    margin-right: 60px;
+    display: flex;
+    align-items: center;
   }
 
   // .site-header__left
 
   &__left {
-    width: 70%;
+    width: 30%;
     display: flex;
     align-items: center;
+    @include media-lte(tablet) {
+      width: 80%;
+    }
   }
 
   // .site-header__nav
 
   &__nav {
+    @include media-lte(tablet) {
+      position: fixed;
+      width: 300px;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      right: -100%;
+      background-color: $white;
+      padding: 35px 20px;
+      box-shadow: 0 5px 10px rgba($grey, 0.1);
+      z-index: 99;
+      transition: right .3s ease-in-out;
+    }
     ul {
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      @include media-lte(tablet) {
+        display: block;
+      }
       li {
-        margin-right: 47px;
+        margin-left: 60px;
+        &.active {
+          a {
+            color: $accent;
+          }
+        }
+        @include media-lte(desktop) {
+          margin-left: 40px;
+        }
+        @include media-lte(tablet) {
+          margin-left: 0;
+          margin-bottom: 20px;
+        }
         a {
-          color: $accent;
+          color: $black-2;
           font-weight: 500;
-          font-size: 15px;
+          font-size: 14px;
           line-height: 18px;
           &:hover {
-            opacity: .8;
+            color: $accent;
           }
         }
       }
@@ -44,8 +109,30 @@
   // .site-header__right
 
   &__right {
-    width: 30%;
+    width: 70%;
     display: flex;
     justify-content: flex-end;
+    @include media-lte(tablet) {
+      width: 20%;
+    }
+  }
+
+  // .site-header__menu
+
+  &__menu {
+    &.menu-active {
+      
+    }
+  }
+
+  // .site-header__hamburger
+
+  &__hamburger {
+    display: none;
+    @include media-lte(tablet) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
   }
 }

@@ -1,9 +1,6 @@
 {{ define "main" }}
 
-<section class="site-buying">
-  <div class="container">
-    <h1>Buying page</h1>
-  </div>
-</section>
+{{ partial "buying/top.html" . }}
+{{ partial "buying/items.html" . }}
 
 {{ end }}

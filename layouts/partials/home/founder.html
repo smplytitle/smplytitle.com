@@ -1,0 +1,30 @@
+{{ $title := .Site.Params.founder.title }}
+{{ $note := .Site.Params.founder.note }}
+
+{{ $imgUrl := .Site.Params.founder.img_url | absURL }}
+{{ $imgAlt := .Site.Params.founder.img_alt }}
+
+{{ $textP1 := .Site.Params.founder.text_p_1 }}
+{{ $textP2 := .Site.Params.founder.text_p_2 }}
+
+{{ $author := .Site.Params.founder.author }}
+{{ $company_name := .Site.Params.founder.company_name }}
+
+
+<section class="s-founder">
+  <div class="container">
+    <div class="s-founder__wrap">
+      <span class="s-founder__note">{{ $note }}</span>
+      <h2 class="s-title-sm">{{ $title }}</h2>
+      <p class="s-founder__text">{{ $textP1 }}</p>
+      <p class="s-founder__text">{{ $textP2 }}</p>
+      <div class="s-founder__details">
+        <span class="s-founder__details-name">{{ $author }}</span>
+        <span class="s-founder__details-company">{{ $company_name }}</span>
+        <div class="s-founder__details-sign">
+          <img src="{{ $imgUrl }}" alt="{{ $imgAlt }}">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

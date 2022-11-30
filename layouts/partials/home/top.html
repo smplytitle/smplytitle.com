@@ -1,0 +1,38 @@
+{{ $title := .Site.Params.homeIntro.title }}
+
+{{ $btnText := .Site.Params.homeIntro.btn_text }}
+{{ $btnUrl := .Site.Params.homeIntro.btn_url }}
+
+{{ $imgUrl1 := .Site.Params.homeIntro.img_url_1 | absURL }}
+{{ $imgAlt1 := .Site.Params.homeIntro.img_alt_1 }}
+
+{{ $imgUrl2 := .Site.Params.homeIntro.img_url_2 | absURL }}
+{{ $imgAlt2 := .Site.Params.homeIntro.img_alt_2 }}
+
+<section class="s-home-top">
+  <div class="container">
+    <div class="s-home-top__title-group">
+      <div class="s-home-top__img">
+        <img src="{{ $imgUrl1 }}" alt="{{ $imgAlt1 }}">
+      </div>
+      <h1 class="s-home-top__title">{{ $title }}</h1>
+    </div>
+    <div class="s-home-top__controls">
+      <a href="{{ $btnUrl }}" class="btn btn-primary btn-rounded">
+        {{ $btnText }}
+      </a>
+      <div class="s-home-top__search">
+        {{ partial "common/search.html" . }}
+      </div>
+    </div>
+    <div class="s-home-top__img-big">
+      {{ partial "common/question-card.html" (
+        dict "imgPath" "img/person-img-1.jpg"
+        "text" "Have a question you want answered?"
+        "btnUrl" "#"
+        "btnText" "Send us a note"
+      ) }}
+      <img src="{{ $imgUrl2 }}" alt="$imgAlt2">
+    </div>
+  </div>
+</section>

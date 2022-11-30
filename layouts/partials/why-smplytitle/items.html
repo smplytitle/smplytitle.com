@@ -1,0 +1,25 @@
+<section class="s-why-items">
+  <div class="container">
+    <div class="s-why-items__wrap">
+      {{ range .Params.items }}
+        <div class="why-item">
+          <div class="why-item__img">
+            <img src="{{ .img }}" alt="Image">
+          </div>
+          <h4 class="why-item__title">{{ .title }}</h4>
+          <div class="why-item__text">
+            {{ .text | safeHTML }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    <div class="s-why-items__question">
+      {{ partial "common/question-card.html" (
+        dict "imgPath" "/img/person-img-1.jpg"
+        "text" "Have a question you want answered?"
+        "btnUrl" "#"
+        "btnText" "Send us a note"
+      ) }}
+    </div>
+  </div>
+</section>
