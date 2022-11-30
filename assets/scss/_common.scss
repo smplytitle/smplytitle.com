@@ -137,9 +137,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 94px;
   letter-spacing: -0.035em;
   color: $black-2;
+  @include media-lte(desktop-lg) {
+    font-size: 58px;
+    line-height: 82px;
+  }
   @include media-lte(tablet) {
-    font-size: 48px;
-    line-height: 64px;
+    font-size: 40px;
+    line-height: 56px;
   }
 }
 
@@ -149,9 +153,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 60px;
   letter-spacing: -0.015em;
   color: $black;
+  @include media-lte(desktop-lg) {
+    font-size: 52px;
+    line-height: 62px;
+  }
   @include media-lte(tablet) {
-    font-size: 42px;
-    line-height: 50px;
+    font-size: 34px;
+    line-height: 44px;
   }
 }
 
@@ -161,9 +169,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 70px;
   letter-spacing: -0.015em;
   color: $black;
-  @include media-lte(desktop) {
+  @include media-lte(desktop-lg) {
     font-size: 42px;
-    line-height: 64px;
+    line-height: 60px;
   }
   @include media-lte(tablet) {
     font-size: 30px;

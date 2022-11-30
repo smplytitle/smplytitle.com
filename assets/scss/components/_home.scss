@@ -5,11 +5,11 @@
   padding: 290px 0 98px;
   text-align: center;
   position: relative;
-  @include media-lte(desktop-lg) {
+  @include media-lte(desktop) {
     padding: 290px 0 50px;
   }
   @include media-lte(tablet) {
-    padding: 150px 0 30px;
+    padding: 150px 0 50px;
   }
   &::before {
     content: '';
@@ -19,9 +19,13 @@
     width: 669px;
     height: 666px;
     background: url("/img/figure-img-1.svg") no-repeat right center;
-    @include media-lte(tablet) {
+    @include media-lte(desktop) {
       top: 40px;
       background-size: 80%;
+    }
+    @include media-lte(tablet) {
+      top: -35px;
+      background-size: 60%;
     }
   }
 
@@ -34,12 +38,12 @@
     letter-spacing: -0.035em;
     color: $black-1;
     @include media-lte(desktop-lg) {
-      font-size: 60px;
-      line-height: 60px;
+      font-size: 64px;
+      line-height: 64px;
     }
     @include media-lte(tablet) {
-      font-size: 52px;
-      line-height: 52px;
+      font-size: 50px;
+      line-height: 50px;
     }
     @include media-lte(tablet-xs) {
       font-size: 46px;
@@ -65,6 +69,9 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 55px;
+    @include media-lte(desktop) {
+      margin-top: 45px;
+    }
     @include media-lte(tablet) {
       flex-direction: column-reverse;
     }
@@ -129,40 +136,6 @@
       }
     }
   }
-
-  // .s-home-top__img-big
-
-  &__img-big {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 327px;
-    width: 100%;
-    height: 390px;
-    @include media-lte(tablet) {
-      margin-top: 250px;
-    }
-    .question-card {
-      width: calc(100% - 30px);
-      max-width: 668px;
-      top: -70px;
-      @include media-lte(tablet) {
-        top: -60px;
-      }
-      @include media-lte(tablet-xs) {
-        top: -140px;
-      }
-    }
-
-    > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 24px;
-    }
-  }
 }
 
 /* Why us section
@@ -182,8 +155,11 @@
     width: 689px;
     height: 662px;
     background: url("/img/figure-img-2.svg") no-repeat left center;
+    @include media-lte(desktop) {
+      background-size: 80%;
+    }
     @include media-lte(tablet) {
-      background-size: 70%;
+      background-size: 60%;
     }
   }
 
@@ -260,6 +236,10 @@
       flex-direction: column;
       align-items: flex-start;
     }
+
+    .btn {
+      width: 211px;
+    }
   }
 
   // .s-why-us__search
@@ -275,6 +255,53 @@
   }
 }
 
+/* Question section
+  ========================================================================== */
+
+// .s-question__img-big
+
+.s-question {
+  padding: 0 0 100px;
+  @include media-lte(desktop) {
+    padding: 0 0 40px;
+  }
+  &__img-big {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 130px;
+    width: 100%;
+    height: 390px;
+    @include media-lte(tablet) {
+      margin-top: 120px;
+    }
+    @include media-lte(tablet-xs) {
+      margin-top: 180px;
+    }
+    .question-card {
+      width: calc(100% - 30px);
+      max-width: 668px;
+      top: -70px;
+      @include media-lte(tablet) {
+        top: -60px;
+      }
+      @include media-lte(tablet-xs) {
+        top: -140px;
+      }
+    }
+  
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 24px;
+    }
+  } 
+}
+
+
 /* Costs section
   ========================================================================== */
 
@@ -287,9 +314,13 @@
   }
   .s-title-md {
     margin-bottom: 58px;
-    padding-left: 40px;
-    @include media-lte(tablet) {
+    padding-left: 30px;
+    @include media-lte(desktop-lg) {
       padding-left: 0;
+      margin-bottom: 42px;
+    }
+    @include media-lte(tablet) {
+      margin-bottom: 30px;
     }
   }
 }
@@ -474,8 +505,15 @@
     line-height: 86px;
     position: relative;
     color: $black-3;
+    @include media-lte(desktop-lg) {
+      max-width: 405px;
+      line-height: 82px;
+    }
     @include media-lte(tablet) {
-      line-height: 64px;
+      line-height: 56px;
+    }
+    @include media-lte(tablet-xs) {
+      max-width: 280px;
     }
   }
 
@@ -507,7 +545,7 @@
   padding: 93px 0 89px;
   background: $grey-light-1;
   @include media-lte(tablet) {
-    padding: 75px 0 75px;
+    padding: 85px 0;
   }
   .container {
     display: flex;
@@ -522,8 +560,11 @@
   .s-title-sm {
     margin-bottom: 24px;
     line-height: 50px;
+    @include media-lte(desktop-lg) {
+      line-height: 52px;
+    }
     @include media-lte(tablet) {
-      line-height: 42px;
+      line-height: 40px;
     }
   }
 
@@ -713,7 +754,7 @@
       left: -71px;
       background: url("/img/quote-icon.svg") no-repeat;
       background-size: cover;
-      @include media-lte(desktop-md) {
+      @include media-lte(desktop-lg) {
         left: -54px;
       }
     }
