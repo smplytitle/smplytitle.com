@@ -59,19 +59,82 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Form submiting
 
-  async function submit() {
-    try {
+  const hubspotForm = 'https://api.hsforms.com/submissions/v3/integration/submit';
+  const hubspotPortalId = '23474905';
+  const hubspotFormId = '5c17587b-7c14-4b96-bb76-f5f2a2235074';
 
+  const formNotifField = document.getElementById('form-notif');
+  const submitBtn = document.getElementById('submit-btn');
+
+  async function submit(data) {
+    try {
+      submitBtn.disabled = true;
+      const response = await fetch(`${hubspotForm}/${hubspotPortalId}/${hubspotFormId}`, {
+        method: 'POST',
+        body: JSON.stringify({
+          context: {
+            pageUri: window.location.href,
+            pageName: document.title,
+          },
+          fields: data,
+        }),
+        headers: { 'Content-Type': 'application/json;charset=UTF-8' },
+      });
+      console.log(response);
+      if (response.ok) {
+        submitNotifHandler({
+          status: 'ok',
+          text: 'Submitted'
+        });
+      }
+      if (response.status === 400) {
+        submitNotifHandler({
+          status: 'error',
+          text: 'Something went wrong. Please try again later.'
+        });
+      }
     } catch(error) {
       console.log(error);
+    } finally {
+      submitBtn.disabled = false;
     }
+  }
+
+  function submitNotifHandler(notif) {
+    formNotifField.classList.remove('error', 'success');
+
+    if(notif.status === 'error') {
+      formNotifField.innerHTML = notif.text;
+      formNotifField.classList.add('error');
+    } else if(notif.status === 'ok') {
+      formNotifField.innerHTML = notif.text;
+      formNotifField.classList.add('success');
+    }
+  }
+
+  function getFormData(form) {
+    const inputs = form.getElementsByTagName('input');
+    return Object.values(inputs).reduce((obj,field) => { obj[field.name] = field.value; return obj }, {})
+  }
+
+  function transformData(data) {
+    const result = [];
+    Object.entries(data).forEach(([name, value]) => {
+      result.push({ name, value });
+    });
+    return result;
   }
 
   const contactForm = document.getElementById('contacts-form');
 
-  contactForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    
-  });
+  if(contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      const formData = getFormData(contactForm);
+  
+      if(formData.fullname && formData.email) submit(transformData(formData));
+      
+    });
+  }
 });
