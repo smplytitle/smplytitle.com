@@ -26,5 +26,14 @@
   </div>
 </footer>
 
-{{ $script := resources.Get "js/script.js" | minify }}
+{{ $hubspotForm := .Site.Params.hubspotForm }}
+{{ $hubspotPortalId := .Site.Params.hubspotPortalId }}
+{{ $hubspotContactFormId := .Site.Params.hubspotContactFormId }}
+{{ $hubspotGetInTouchFormId := .Site.Params.hubspotGetInTouchFormId }}
+
+{{ $script := resources.Get "js/script.js" | minify | js.Build (dict "params" 
+  (dict "hubspotForm" $hubspotForm
+  "hubspotPortalId" $hubspotPortalId
+  "hubspotContactFormId" $hubspotContactFormId
+  "hubspotGetInTouchFormId" $hubspotGetInTouchFormId)) }}
 <script src="{{ $script.Permalink }}"></script>

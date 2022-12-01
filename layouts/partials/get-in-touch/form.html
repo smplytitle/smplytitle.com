@@ -6,15 +6,18 @@
       </h1>
       <p class="s-contacts__descr">{{ .Description }}</p>
       <div class="contact-form">
-        <form action="#" method="post">
+        <form action="#" id="get-in-touch-form" method="post">
           <div class="form-control">
-            <input type="text" name="name" class="input-control" required placeholder="Your Name">
+            <input type="text" name="fullname" id="name" class="input-control" placeholder="Your Name">
+            <span class="input-error-message"></span>
           </div>
           <div class="form-control">
-            <input type="email" name="email" class="input-control" required placeholder="Email">
+            <input type="email" name="email" id="email" class="input-control" placeholder="Email">
+            <span class="input-error-message"></span>
           </div>
+          <p class="form-message" id="form-notif"></p>
           <div class="form-btn">
-            <button type="submit" class="btn btn-black">Send</button>
+            <button type="submit" id="submit-btn" class="btn btn-black">Send</button>
           </div>
         </form>
       </div>
