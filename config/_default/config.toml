@@ -70,14 +70,14 @@ copyright = "SmplyTile, Inc. 2022"
     title = "Transparency is trust"
     description = "We got tired of complicated and unreadable title, escrow and closing documents. So we have made it simpler and clearer so <span>you can understand what you are paying for and why.</span>"
     btn_text = "Sign up for more news from us."
-    btn_url = "#"
+    btn_url = "/get-in-touch"
 
   # Home about company
   [params.about]
     title = "We’re not your father’s company or your grandfathers."
     description = "At <span>SmplyTitle</span> we’re re-inventing everything around your home buying experience. Starting with title. How you ask? We’re in the all digital, easy all the time frame of mind."
     btn_text = "Learn more about our technology"
-    btn_url = "/blog"
+    btn_url = "/why-smplytitle"
     big_img = "img/home-img-3.jpg"
     big_img_alt = "Image"
     small_img = "img/home-img-4.jpg"
@@ -120,5 +120,5 @@ copyright = "SmplyTile, Inc. 2022"
   [[menu.main]]
     identifier = "contact-us"
     name = "Contact us"
-    url = "/contacts"
+    url = "/contact-us"
     weight = 4
