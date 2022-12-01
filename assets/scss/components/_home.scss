@@ -465,7 +465,7 @@
   padding: 58px 0 228px;
   position: relative;
   @include media-lte(tablet) {
-    padding: 100px 0 100px;
+    padding: 0 0 100px;
   }
   &::before {
     content: '';

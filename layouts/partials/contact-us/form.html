@@ -8,10 +8,12 @@
       <div class="contact-form">
         <form action="#" id="contacts-form" method="post">
           <div class="form-control">
-            <input type="text" name="fullname" class="input-control" required placeholder="Your Name">
+            <input type="text" name="fullname" id="name" class="input-control" placeholder="Your Name">
+            <span class="input-error-message"></span>
           </div>
           <div class="form-control">
-            <input type="email" name="email" class="input-control" required placeholder="Email">
+            <input type="email" name="email" id="email" class="input-control" placeholder="Email">
+            <span class="input-error-message"></span>
           </div>
           <p class="form-message" id="form-notif"></p>
           <div class="form-btn">

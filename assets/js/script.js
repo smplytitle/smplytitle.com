@@ -1,14 +1,21 @@
+import * as params from '@params';
+
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.getElementById('site-header');
 
   // Fixed header
-  window.addEventListener('scroll', function() {
+
+  function detectOffset() {
     if(window.scrollY > 1) {
       header.classList.add('active');
     } else {
       header.classList.remove('active');
     }
-  });
+  }
+
+  detectOffset();
+
+  window.addEventListener('scroll', detectOffset);
 
   // Mobile menu
   const headerMenuOpenBtn = document.getElementById('header-menu-open');
@@ -59,17 +66,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Form submiting
 
-  const hubspotForm = 'https://api.hsforms.com/submissions/v3/integration/submit';
-  const hubspotPortalId = '23474905';
-  const hubspotFormId = '5c17587b-7c14-4b96-bb76-f5f2a2235074';
+  const hubspotForm = params.hubspotForm;
+  const hubspotPortalId = params.hubspotPortalId;
+  const hubspotContactFormId = params.hubspotContactFormId;
+  const hubspotGetInTouchFormId = params.hubspotGetInTouchFormId;
 
   const formNotifField = document.getElementById('form-notif');
   const submitBtn = document.getElementById('submit-btn');
 
-  async function submit(data) {
+  async function submit(data, form, formId) {
     try {
       submitBtn.disabled = true;
-      const response = await fetch(`${hubspotForm}/${hubspotPortalId}/${hubspotFormId}`, {
+      const response = await fetch(`${hubspotForm}/${hubspotPortalId}/${formId}`, {
         method: 'POST',
         body: JSON.stringify({
           context: {
@@ -80,12 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }),
         headers: { 'Content-Type': 'application/json;charset=UTF-8' },
       });
-      console.log(response);
+
       if (response.ok) {
         submitNotifHandler({
           status: 'ok',
           text: 'Submitted'
         });
+        form.reset();
       }
       if (response.status === 400) {
         submitNotifHandler({
@@ -110,6 +119,10 @@ document.addEventListener('DOMContentLoaded', function() {
       formNotifField.innerHTML = notif.text;
       formNotifField.classList.add('success');
     }
+
+    setTimeout(() => {
+      formNotifField.innerHTML = '';
+    }, 3000);
   }
 
   function getFormData(form) {
@@ -125,16 +138,103 @@ document.addEventListener('DOMContentLoaded', function() {
     return result;
   }
 
+  function validateOnEntry(fields) {
+    fields.forEach(field => {
+      const input = document.getElementById(`${field}`);
+
+      input.addEventListener('input', () => {
+        validateFields(input);
+        if(isFormValid(fields)) {
+          submitBtn.disabled = false;
+        } else {
+          submitBtn.disabled = true;
+        }
+      });
+    });
+  }
+
+  function validateOnSubmit(form, fields, formId) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      fields.forEach(field => {
+        const input = document.getElementById(`${field}`);
+        validateFields(input);
+      });
+  
+      const formData = getFormData(form);
+
+      if(!isFormValid(fields)) {
+        submitBtn.disabled = true;
+      } else {
+        submit(transformData(formData), form, formId);
+      }
+    });
+  }
+
+  function validateFields(field) {
+
+    if (field.value.trim() === '') {
+      setStatus(field, 'This field cannot be blank', 'error');
+      return;
+    } else {
+      setStatus(field, null, 'success');
+    }
+
+    if (field.type === 'text') {
+      const re = /^[a-zA-Z\s]+$/
+      if(re.test(field.value)) {
+        setStatus(field, null, 'success');
+      } else {
+        setStatus(field, 'Please enter only letters', 'error');
+      }
+    }
+
+    if (field.type === 'email') {
+      const re = /\S+@\S+\.\S+/
+      if (re.test(field.value)) {
+        setStatus(field, null, 'success');
+      } else {
+        setStatus(field, 'Please enter valid email address', 'error');
+      }
+    }
+  }
+
+  function setStatus(field, message, status) {
+    const errorMessage = field.parentElement.querySelector('.input-error-message');
+
+    if (status === 'success') {
+      if (errorMessage) { errorMessage.innerText = "" }
+      field.classList.remove('input-error');
+    }
+
+    if (status === 'error') {
+      field.parentElement.querySelector('.input-error-message').innerText = message;
+      field.classList.add('input-error');
+    }
+  }
+
+  function isFormValid(fields) {
+    isValid = true;
+    fields.forEach(field => {
+      const input = document.getElementById(`${field}`);
+      if(input.classList.contains('input-error')) isValid = false;
+    });
+    return isValid;
+  }
+
   const contactForm = document.getElementById('contacts-form');
+  const getInTouchForm = document.getElementById('get-in-touch-form');
+
+  const formFields = ['name', 'email'];
 
   if(contactForm) {
-    contactForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-  
-      const formData = getFormData(contactForm);
-  
-      if(formData.fullname && formData.email) submit(transformData(formData));
-      
-    });
+    validateOnEntry(formFields);
+    validateOnSubmit(contactForm, formFields, hubspotContactFormId);
+  }
+
+  if(getInTouchForm) {
+    validateOnEntry(formFields);
+    validateOnSubmit(getInTouchForm, formFields, hubspotGetInTouchFormId);
   }
 });

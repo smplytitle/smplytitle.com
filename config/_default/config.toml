@@ -3,12 +3,19 @@ languageCode = "en-us"
 title = "SmplyTitle"
 copyright = "SmplyTile, Inc. 2022"
 
+
 # Site params
 [params]
   logo = "img/site-logo.svg"
   email = "info@smplytitle.com"
   # Meta data
   description = "SmplyTitle is the only title and escrow closing company that connects directly with the buyer and seller. What does that mean? It means you get better pricing, transparency and clear understanding and simply process all with the click of a button."
+
+  # Hubspot data
+  hubspotForm = "https://api.hsforms.com/submissions/v3/integration/submit"
+  hubspotPortalId = '23474905'
+  hubspotContactFormId = '5c17587b-7c14-4b96-bb76-f5f2a2235074'
+  hubspotGetInTouchFormId = '821d7d10-8d07-48b1-8484-fee137530642'
 
   # Home top intro
   [params.homeIntro]
