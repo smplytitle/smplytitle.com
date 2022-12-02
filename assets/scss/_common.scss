@@ -146,6 +146,14 @@ h1, h2, h3, h4, h5, h6 {
       background-color: $grey;
     }
   }
+  &.submitted {
+    cursor: default;
+    background-color: green;
+    opacity: .5;
+    &:hover {
+      background-color: green;
+    }
+  }
 }
 
 .text-center {

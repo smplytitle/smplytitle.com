@@ -90,38 +90,33 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       if (response.ok) {
-        submitNotifHandler({
-          status: 'ok',
-          text: 'Submitted'
-        });
+        submitBtn.innerText = 'Submitted';
+        submitBtn.classList.add('submitted');
         form.reset();
       }
       if (response.status === 400) {
+        submitBtn.disabled = false;
         submitNotifHandler({
           status: 'error',
           text: 'Something went wrong. Please try again later.'
         });
       }
     } catch(error) {
-      console.log(error);
-    } finally {
       submitBtn.disabled = false;
+      console.log(error);
     }
   }
 
   function submitNotifHandler(notif) {
-    formNotifField.classList.remove('error', 'success');
+    formNotifField.classList.remove('error');
 
     if(notif.status === 'error') {
-      formNotifField.innerHTML = notif.text;
-      formNotifField.classList.add('error');
-    } else if(notif.status === 'ok') {
-      formNotifField.innerHTML = notif.text;
-      formNotifField.classList.add('success');
+      formNotifField.innerText = notif.text;
+      formNotifField.classList.add(notif.status);
     }
 
     setTimeout(() => {
-      formNotifField.innerHTML = '';
+      formNotifField.innerText = '';
     }, 3000);
   }
 
