@@ -4,10 +4,10 @@
       {{ range .Params.items }}
       <div class="buying-item">
         <div class="buying-item__icon">
-          <img src="{{ .icon }}" alt="">
+          <img src="{{ .icon }}" alt="{{ .alt }}">
         </div>
         <div class="buying-item__content">
-          <h3 class="buying-item__title">{{ .title }}</h3>
+          <h2 class="buying-item__title">{{ .title }}</h2>
           <p class="buying-item__text">{{ .text }}</p>
         </div>
       </div>
