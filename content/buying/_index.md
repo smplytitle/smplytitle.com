@@ -5,6 +5,7 @@ draft: false
 
 items:
   - icon: /img/icons/office-icon.svg
+    alt: Office icon
     title: Sir, Lady, Viscount, Viceroy, Duchess, Earl or Duke.
     text: >
       Those titles make you sound important. But a home title really is important. 
@@ -14,6 +15,7 @@ items:
       and other potential snafus. That someone is your title company.
   
   - icon: /img/icons/building-icon.svg
+    alt: Building icon
     title: Are you sure?
     text: >
       In the vast majority of home sales, the due diligence of the title
@@ -23,6 +25,7 @@ items:
       you from losses due to any possible oversight in the title process.
 
   - icon: /img/icons/flag-icon.svg
+    alt: Flag icon
     title: The bigger the fee, the higher the margin.
     text: >
       Here’s one thing they definitely don’t tell you about title companies 
@@ -33,6 +36,7 @@ items:
       all you get is that warm feeling that comes with making them richer.
   
   - icon: /img/icons/message-icon.svg
+    alt: Message icon
     title: We work smarter to save you more.
     text: >
       At Smply Title, we’ve looked closely at the title process. 

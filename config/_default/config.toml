@@ -23,20 +23,20 @@ copyright = "SmplyTile, Inc. 2022"
     img_url_1 = "img/home-top-img.jpg"
     img_alt_1 = "For sale"
     img_url_2 = "img/home-img-1.jpg"
-    img_alt_2 = "Image"
+    img_alt_2 = "Home family Image"
     btn_text = "Learn more about title insurnace."
-    btn_url = "/faq"
+    btn_url = "/faq/"
 
   # Home why choose us
   [params.homeWhyUs]
     title_left_part = "Why"
     title_right_part = "SmplyTitle?"
     img_url = "img/home-img-2.jpg"
-    img_alt = "Image"
+    img_alt = "Why SmplyTitle image"
     text_p_1 = "With so much going on around a home sale, we want to take the confusion and hassle out of the process and save you money."
     text_p_2 = "By simply providing a few details about the size of a sale, we can instantly give you a comparative analysis of fees from multiple companies. And we can beat them all."
     btn_text = "Learn how we can help"
-    btn_url = "/why-smplytitle"
+    btn_url = "/why-smplytitle/"
     # All features are defined in their own files.
     # You can find example items at data/features.
 
@@ -49,7 +49,7 @@ copyright = "SmplyTile, Inc. 2022"
     author = "- Alex Lyman - CEO & Founder"
     company_name = "SmplyTitle"
     img_url = "img/sign.png" 
-    img_alt = "Sign"
+    img_alt = "CEO & Founder sign image"
 
   # Home costs
   [params.costs]
@@ -77,18 +77,18 @@ copyright = "SmplyTile, Inc. 2022"
     title = "Transparency is trust"
     description = "We got tired of complicated and unreadable title, escrow and closing documents. So we have made it simpler and clearer so <span>you can understand what you are paying for and why.</span>"
     btn_text = "Sign up for more news from us."
-    btn_url = "/get-in-touch"
+    btn_url = "/get-in-touch/"
 
   # Home about company
   [params.about]
     title = "We’re not your father’s company or your grandfathers."
     description = "At <span>SmplyTitle</span> we’re re-inventing everything around your home buying experience. Starting with title. How you ask? We’re in the all digital, easy all the time frame of mind."
     btn_text = "Learn more about our technology"
-    btn_url = "/why-smplytitle"
+    btn_url = "/why-smplytitle/"
     big_img = "img/home-img-3.jpg"
-    big_img_alt = "Image"
+    big_img_alt = "Home image"
     small_img = "img/home-img-4.jpg"
-    small_img_alt = "Image"
+    small_img_alt = "House image"
   
   # Home partners
   [params.partners]
@@ -97,35 +97,35 @@ copyright = "SmplyTile, Inc. 2022"
     description = "SmplyTitle is fully regulated, insured and underwritten by the most trusted names on the planet."
     [[params.partners.item]]
       img_url = "img/pt-img-1.png"
-      img_alt = "Image"
+      img_alt = "Westcor partner image"
     [[params.partners.item]]
       img_url = "img/pt-img-2.png"
-      img_alt = "Image"
+      img_alt = "First National partner image"
 
 # Menu
 [menu]
   [[menu.main]]
     identifier = "buying"
     name = "Buying"
-    url = "/buying"
+    url = "/buying/"
     weight = 1
   [[menu.main]]
     identifier = "why-smplytitle"
     name = "Why SmplyTitle"
-    url = "/why-smplytitle"
+    url = "/why-smplytitle/"
     weight = 2
   [[menu.main]]
     identifier = "faq"
     name = "FAQ"
-    url = "/faq"
+    url = "/faq/"
     weight = 3
   [[menu.main]]
     identifier = "blog"
     name = "Blog"
-    url = "/blog"
+    url = "/blog/"
     weight = 4
   [[menu.main]]
     identifier = "contact-us"
     name = "Contact us"
-    url = "/contact-us"
+    url = "/contact-us/"
     weight = 4
