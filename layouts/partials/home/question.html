@@ -1,7 +1,7 @@
 {{ $imgUrl2 := .Site.Params.homeIntro.img_url_2 | absURL }}
 {{ $imgAlt2 := .Site.Params.homeIntro.img_alt_2 }}
 
-<section class="s-question">
+<div class="s-question">
   <div class="container">
     <div class="s-question__img-big">
       {{ partial "common/question-card.html" (
@@ -10,7 +10,7 @@
         "btnUrl" "/contact-us/"
         "btnText" "Send us a note"
       ) }}
-      <img src="{{ $imgUrl2 }}" alt="{{ $imgAlt2 }}">
+      <img src="{{ $imgUrl2 }}" loading="lazy" width="1110" height="390" alt="{{ $imgAlt2 }}">
     </div>
   </div>
-</section>
+</div>

@@ -3,6 +3,10 @@ languageCode = "en-us"
 title = "SmplyTitle"
 copyright = "SmplyTile, Inc. 2022"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 # Site params
 [params]

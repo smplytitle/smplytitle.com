@@ -8,7 +8,7 @@
     <h2 class="s-title-md">{{ $title }}</h2>
     <div class="costs-wrap">
       <div class="costs-wrap__bar">
-        <img src="img/dots-bar-icon.svg" alt="Dots icon">
+        <img src="img/dots-bar-icon.svg" loading="lazy" width="24" height="6" alt="Dots icon">
       </div>
       <div class="costs-wrap__content">
         <div class="costs-wrap__note">
@@ -17,7 +17,7 @@
         <div class="costs-wrap__items">
           {{ range $costItems }}
             <div class="costs-item">
-              <h5 class="costs-item__title">{{ .title }}</h5>
+              <h3 class="costs-item__title">{{ .title }}</h3>
               <div class="costs-item__progress-bar">
                 <div class="costs-item__progress-bar-fill" style="width: {{.width}}">{{ .price }}</div>
               </div>

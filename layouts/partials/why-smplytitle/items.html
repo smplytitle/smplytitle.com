@@ -4,9 +4,9 @@
       {{ range .Params.items }}
         <div class="why-item">
           <div class="why-item__img">
-            <img src="{{ .img }}" alt="Image">
+            <img src="{{ .img }}" loading="lazy" width="330" height="288" alt="Image">
           </div>
-          <h4 class="why-item__title">{{ .title }}</h4>
+          <h3 class="why-item__title">{{ .title }}</h3>
           <div class="why-item__text">
             {{ .text | safeHTML }}
           </div>

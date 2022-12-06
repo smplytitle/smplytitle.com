@@ -5,7 +5,7 @@
     <div class="single-artictle-top">
       <div class="post-author">
         <div class="post-author__img">
-          <img src="{{ .Params.authorImg }}" alt="{{ .Params.author }}">
+          <img src="{{ .Params.authorImg }}" loading="lazy" width="40" height="40" alt="{{ .Params.author }}">
         </div>
         <div class="post-author__name">
           {{ .Params.author }}
@@ -18,7 +18,7 @@
     </div>
     <div class="single-blog-content">
       <div class="single-blog-content__img">
-        <img src="{{ .Params.postImage }}" alt="{{ .Title }}">
+        <img src="{{ .Params.postImage }}" loading="lazy" width="1110" height="500" alt="{{ .Title }}">
       </div>
       <div class="single-blog-content__inner">
         {{ .Content | safeHTML }}
