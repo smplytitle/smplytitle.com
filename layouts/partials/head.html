@@ -3,13 +3,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
   {{ with .Site.Params.description }}
     <meta name="description" content="{{ . }}">
   {{ end }}
 
   <title>{{ .Title | plainify }}</title>
 
-  <link rel="canonical" href="{{ .Site.BaseURL }}" />
+  <meta property="og:title" content="{{ .Title | plainify }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Site.BaseURL }}">
+  <meta property="og:image" content="{{ `img/sharing-image.png` | absURL }}">
+
+  <link rel="canonical" href="{{ .Site.BaseURL }}">
 
   {{ "<!-- Favicon -->" | safeHTML }}
   <link rel="icon" type="image/x-icon" href="{{ `img/favicon.ico` | absURL }}">
@@ -19,5 +25,5 @@
 
   {{ "<!-- Main Stylesheets -->" | safeHTML }}
   {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify }}
-  <link href="{{ $style.Permalink }}" rel="stylesheet" />
+  <link href="{{ $style.Permalink }}" rel="stylesheet">
 </head>
