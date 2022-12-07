@@ -4,6 +4,10 @@ description: >
   Talk about how autmation is being used now, and how 
   we’re hoping to flip it on its head by making 
   it 100x more efficient and smart.
+SEODescription: >
+  SmplyTitle is the only title and escrow closing company that connects directly with the buyer and seller.
+  What does that mean? It means you get better pricing, transparency and clear understanding
+  and simply process all with the click of a button.
 author: "Alex Lyman"
 authorImg: /img/author-img-1.jpg
 postImage: /img/blog/post-img-1.jpg

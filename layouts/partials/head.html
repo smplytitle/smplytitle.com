@@ -4,8 +4,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
-  {{ with .Site.Params.description }}
-    <meta name="description" content="{{ . }}">
+  {{ if .IsHome }}
+    {{ with .Site.Params.description }}
+      <meta name="description" content="{{ . }}">
+    {{ end }}
+  {{ else }}
+    {{ with .Params.SEODescription }}
+      <meta name="description" content="{{ . }}">
+    {{ end }}
+  {{ end }}
+
+  {{ with .Site.Params.author }}
+    <meta name="author" content="{{ . }}">
   {{ end }}
 
   <title>{{ .Title | plainify }}</title>

@@ -4,6 +4,10 @@ description: >
   SmplyTitle’s mission is to give our customers the clearest, 
   simplest, and cheapest closing process possible. 
   Because let’s be honest you just paid a lot of money for your house.
+SEODescription: >
+  SmplyTitle is the only title and escrow closing company that connects directly with the buyer and seller.
+  What does that mean? It means you get better pricing, transparency and clear understanding
+  and simply process all with the click of a button.
 date: 2022-11-25T15:21:41+02:00
 draft: false
 
