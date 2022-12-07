@@ -4,6 +4,10 @@ description: >
   Comparing what happened to property/casualty insurance 
   in the 2000’s vs what we hope to recreate in title 
   and escrow industry. Let the branding war begin.
+SEODescription: >
+  SmplyTitle is the only title and escrow closing company that connects directly with the buyer and seller.
+  What does that mean? It means you get better pricing, transparency and clear understanding
+  and simply process all with the click of a button.
 author: "Alex Lyman"
 authorImg: /img/author-img-1.jpg
 postImage: /img/blog/post-img-3.jpg
