@@ -22,6 +22,9 @@
     align-items: center;
     justify-content: center;
     margin-top: 100px;
+    @include media-lte(desktop) {
+      margin-top: 50px;
+    }
   }
 
   // .s-why-top__title
@@ -101,7 +104,7 @@
   z-index: 3;
   padding: 170px 0 100px;
   @include media-lte(desktop) {
-    padding: 100px 0;
+    padding: 50px 0;
   }
   // .s-why-first-info__wrap
 
