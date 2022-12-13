@@ -10,6 +10,11 @@
 
   &.grey {
     background-color: $white;
+    .subscribe-form {
+      .input-control {
+        background-color: $white;
+      }
+    }
   }
 
   // .site-footer__wrap
@@ -23,10 +28,10 @@
     border-radius: 24px;
     z-index: 3;
     @include media-lte(desktop) {
-      padding: 50px 40px 35px;
+      padding: 50px 40px 45px;
     }
     @include media-lte(tablet) {
-      padding: 40px 25px 20px;
+      padding: 40px 25px 45px;
       flex-wrap: wrap;
     }
     #{$root}.light & {
@@ -103,6 +108,17 @@
             color: $accent;
           }
         }
+      }
+    }
+  }
+
+  // .site-footer__subscribe-form
+
+  &__subscribe-form {
+    .subscribe-form {
+      margin: 25px 0 0 auto;
+      @include media-lte(tablet) {
+        margin: 20px auto 0;
       }
     }
   }

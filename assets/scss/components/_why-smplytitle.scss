@@ -18,6 +18,8 @@
   // .s-why-top__arrows
 
   &__arrows {
+    position: relative;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;

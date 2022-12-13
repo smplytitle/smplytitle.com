@@ -66,18 +66,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Form submiting
 
-  const hubspotForm = params.hubspotForm;
+  const hubspotFormApi = params.hubspotFormApi;
   const hubspotPortalId = params.hubspotPortalId;
   const hubspotContactFormId = params.hubspotContactFormId;
   const hubspotGetInTouchFormId = params.hubspotGetInTouchFormId;
-
-  const formNotifField = document.getElementById('form-notif');
-  const submitBtn = document.getElementById('submit-btn');
+  const hubspotSubscriptioFormId = params.hubspotSubscriptioFormId;
 
   async function submit(data, form, formId) {
+    const submitBtn = form.querySelector('.submit-btn-js');
+    const errorData = {
+      status: 'error',
+      text: 'Something went wrong. Please try again later.'
+    };
     try {
       submitBtn.disabled = true;
-      const response = await fetch(`${hubspotForm}/${hubspotPortalId}/${formId}`, {
+      const response = await fetch(`${hubspotFormApi}/${hubspotPortalId}/${formId}`, {
         method: 'POST',
         body: JSON.stringify({
           context: {
@@ -90,24 +93,29 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       if (response.ok) {
+        const btnText = submitBtn.innerText;
         submitBtn.innerText = 'Submitted';
         submitBtn.classList.add('submitted');
         form.reset();
+        setTimeout(() => {
+          submitBtn.innerText = btnText;
+          submitBtn.classList.remove('submitted');
+          submitBtn.disabled = false;
+        }, 2500);
       }
       if (response.status === 400) {
         submitBtn.disabled = false;
-        submitNotifHandler({
-          status: 'error',
-          text: 'Something went wrong. Please try again later.'
-        });
+        submitNotifHandler(form, errorData);
       }
     } catch(error) {
       submitBtn.disabled = false;
-      console.log(error);
+      submitNotifHandler(form, errorData);
     }
   }
 
-  function submitNotifHandler(notif) {
+  function submitNotifHandler(form, notif) {
+    const formNotifField = form.querySelector('.form-notif-js');
+
     formNotifField.classList.remove('error');
 
     if(notif.status === 'error') {
@@ -117,7 +125,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(() => {
       formNotifField.innerText = '';
-    }, 3000);
+      formNotifField.classList.remove('error');
+    }, 2500);
   }
 
   function getFormData(form) {
@@ -133,13 +142,14 @@ document.addEventListener('DOMContentLoaded', function() {
     return result;
   }
 
-  function validateOnEntry(fields) {
-    fields.forEach(field => {
-      const input = document.getElementById(`${field}`);
+  function validateOnEntry(form, fields) {
+    const submitBtn = form.querySelector('.submit-btn-js');
 
+    fields.forEach(field => {
+      const input = form.querySelector(`.${field}`);
       input.addEventListener('input', () => {
         validateFields(input);
-        if(isFormValid(fields)) {
+        if(isFormValid(form, fields)) {
           submitBtn.disabled = false;
         } else {
           submitBtn.disabled = true;
@@ -152,14 +162,16 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(event) {
       event.preventDefault();
 
+      const submitBtn = form.querySelector('.submit-btn-js');
+
       fields.forEach(field => {
-        const input = document.getElementById(`${field}`);
+        const input = form.querySelector(`.${field}`);
         validateFields(input);
       });
-  
+
       const formData = getFormData(form);
 
-      if(!isFormValid(fields)) {
+      if(!isFormValid(form, fields)) {
         submitBtn.disabled = true;
       } else {
         submit(transformData(formData), form, formId);
@@ -199,20 +211,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMessage = field.parentElement.querySelector('.input-error-message');
 
     if (status === 'success') {
-      if (errorMessage) { errorMessage.innerText = "" }
+      if (errorMessage) { 
+        errorMessage.innerText = "";
+        errorMessage.style.display = 'none';
+      }
       field.classList.remove('input-error');
     }
 
     if (status === 'error') {
-      field.parentElement.querySelector('.input-error-message').innerText = message;
+      errorMessage.innerText = message;
+      errorMessage.style.display = 'block';
       field.classList.add('input-error');
     }
   }
 
-  function isFormValid(fields) {
+  function isFormValid(form, fields) {
     isValid = true;
     fields.forEach(field => {
-      const input = document.getElementById(`${field}`);
+      const input = form.querySelector(`.${field}`);
       if(input.classList.contains('input-error')) isValid = false;
     });
     return isValid;
@@ -221,15 +237,28 @@ document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('contacts-form');
   const getInTouchForm = document.getElementById('get-in-touch-form');
 
-  const formFields = ['name', 'email'];
+  const formFields = ['fullname-js', 'email-js'];
 
   if(contactForm) {
-    validateOnEntry(formFields);
+    validateOnEntry(contactForm, formFields);
     validateOnSubmit(contactForm, formFields, hubspotContactFormId);
   }
 
   if(getInTouchForm) {
-    validateOnEntry(formFields);
+    validateOnEntry(getInTouchForm, formFields);
     validateOnSubmit(getInTouchForm, formFields, hubspotGetInTouchFormId);
+  }
+
+
+  // Subscription form
+
+  const subscribeForm = document.querySelectorAll('.subscribe-form-js');
+
+  if(subscribeForm) {
+    for (let i = 0; i < subscribeForm.length; i++) {
+      const fields = ['subscribe-email-js'];
+      validateOnEntry(subscribeForm[i], fields);
+      validateOnSubmit(subscribeForm[i], fields, hubspotSubscriptioFormId);
+    }
   }
 });
