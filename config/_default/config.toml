@@ -17,10 +17,11 @@ copyright = "SmplyTile, Inc. 2022"
   author = "SmplyTitle"
 
   # Hubspot data
-  hubspotForm = "https://api.hsforms.com/submissions/v3/integration/submit"
-  hubspotPortalId = '23474905'
-  hubspotContactFormId = '5c17587b-7c14-4b96-bb76-f5f2a2235074'
-  hubspotGetInTouchFormId = '821d7d10-8d07-48b1-8484-fee137530642'
+  hubspotFormApi = "https://api.hsforms.com/submissions/v3/integration/submit"
+  hubspotPortalId = "23474905"
+  hubspotContactFormId = "5c17587b-7c14-4b96-bb76-f5f2a2235074"
+  hubspotGetInTouchFormId = "821d7d10-8d07-48b1-8484-fee137530642"
+  hubspotSubscriptioFormId = "d75b929f-cfb6-45f8-b3c9-4f79cf8508b7"
 
   # Home top intro
   [params.homeIntro]
@@ -29,7 +30,7 @@ copyright = "SmplyTile, Inc. 2022"
     img_alt_1 = "For sale"
     img_url_2 = "img/home-img-1.jpg"
     img_alt_2 = "Home family Image"
-    btn_text = "Learn more about title insurnace."
+    btn_text = "Learn more about title insurnace"
     btn_url = "/faq/"
 
   # Home why choose us

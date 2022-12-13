@@ -21,19 +21,25 @@
             {{ end }}
           </ul>
         </nav>
+        <div class="site-footer__subscribe-form">
+          {{ partial "subscribe-form.html" . }}
+        </div>
       </div>
     </div>
   </div>
 </footer>
 
-{{ $hubspotForm := .Site.Params.hubspotForm }}
+{{ $hubspotFormApi := .Site.Params.hubspotFormApi }}
 {{ $hubspotPortalId := .Site.Params.hubspotPortalId }}
 {{ $hubspotContactFormId := .Site.Params.hubspotContactFormId }}
 {{ $hubspotGetInTouchFormId := .Site.Params.hubspotGetInTouchFormId }}
 
+{{ $hubspotSubscriptioFormId := .Site.Params.hubspotSubscriptioFormId }}
+
 {{ $script := resources.Get "js/script.js" | minify | js.Build (dict "params" 
-  (dict "hubspotForm" $hubspotForm
+  (dict "hubspotFormApi" $hubspotFormApi
   "hubspotPortalId" $hubspotPortalId
   "hubspotContactFormId" $hubspotContactFormId
-  "hubspotGetInTouchFormId" $hubspotGetInTouchFormId)) }}
+  "hubspotGetInTouchFormId" $hubspotGetInTouchFormId
+  "hubspotSubscriptioFormId" $hubspotSubscriptioFormId)) }}
 <script src="{{ $script.Permalink }}"></script>
