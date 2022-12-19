@@ -130,8 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function getFormData(form) {
-    const inputs = form.getElementsByTagName('input');
-    return Object.values(inputs).reduce((obj,field) => { obj[field.name] = field.value; return obj }, {})
+    const formItems = form.querySelectorAll('.form-item-js');
+    return Object.values(formItems).reduce((obj,field) => { obj[field.name] = field.value; return obj }, {})
   }
 
   function transformData(data) {

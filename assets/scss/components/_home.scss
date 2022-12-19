@@ -33,10 +33,11 @@
 
   &__title {
     font-weight: 700;
-    font-size: 80px;
+    font-size: 70px;
     line-height: 80px;
     letter-spacing: -0.035em;
     color: $black-1;
+    text-align: left;
     @include media-lte(desktop-lg) {
       font-size: 64px;
       line-height: 64px;
@@ -126,14 +127,15 @@
 
   &__title-group {
     position: relative;
-    max-width: 768px;
+    max-width: 800px;
     width: 100%;
-    margin: 0 auto;
+    margin-left: 250px;
     @include media-lte(wide) {
       display: flex;
       align-items: center;
       max-width: 100%;
       text-align: left;
+      margin-left: 0;
     }
   }
 
@@ -144,23 +146,34 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 227px;
+    width: 314px;
+    height: 209px;
     right: calc(100% + 55px);
-    top: 0;
+    top: 50%;
+    margin-top: -104px;
     @include media-lte(wide) {
       position: relative;
+      width: 226px;
+      height: 159px;
+      top: 0;
+      margin-top: 0;
       right: 0;
       flex-shrink: 0;
       margin-right: 35px;
     }
     @include media-lte(tablet) {
       width: 150px;
+      height: 100px;
       margin-right: 25px;
     }
     @include media-lte(tablet-xs) {
       display: none;
     }
     img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       border-radius: 27px 27px 27px 75px;
       @include media-lte(tablet) {
         border-radius: 20px 20px 20px 55px;
@@ -176,7 +189,7 @@
   position: relative;
   padding: 98px 0 106px;
   @include media-lte(tablet) {
-    padding-bottom: 70px;
+    padding: 50px 0;
   }
   &::before {
     content: '';
@@ -254,6 +267,14 @@
       font-size: 16px;
       line-height: 150%;
       color: $black-2;
+      &:first-child {
+        font-size: 36px;
+        line-height: 50px;
+        @include media-lte(tablet) {
+          font-size: 26px;
+          line-height: 36px;
+        }
+      }
     }
   }
 
@@ -306,9 +327,10 @@
     height: 390px;
     @include media-lte(tablet) {
       margin-top: 120px;
+      height: 250px;
     }
     @include media-lte(tablet-xs) {
-      margin-top: 180px;
+      margin-top: 50px;
     }
     .question-card {
       width: calc(100% - 30px);
@@ -341,7 +363,8 @@
   z-index: 1;
   padding: 106px 0 140px;
   @include media-lte(tablet) {
-    padding-top: 70px;
+    padding-top: 50px;
+    padding-bottom: 100px;
   }
   .s-title-md {
     margin-bottom: 58px;
@@ -493,19 +516,10 @@
 
 .s-trust {
   text-align: center;
-  padding: 58px 0 228px;
+  padding: 58px 0 180px;
   position: relative;
   @include media-lte(tablet) {
     padding: 0 0 100px;
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 467px;
-    height: 741px;
-    background: url("/img/figure-img-3.svg") no-repeat right center;
   }
 
   &::after {
@@ -514,8 +528,8 @@
     top: 120px;
     left: 0;
     right: 0;
-    width: 800px;
-    height: 290px;
+    width: 1254px;
+    height: 526px;
     margin: 0 auto;
     background: $purple-2;
     opacity: 0.6;
@@ -531,8 +545,7 @@
 
   .s-title-lg {
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto 10px;
+    margin: 0 auto 24px;
     line-height: 86px;
     position: relative;
     color: $black-3;
@@ -548,11 +561,20 @@
     }
   }
 
+  // s-trust__img
+
+  &__img {
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   // .s-trust__descr
 
   &__descr {
     width: 100%;
-    max-width: 726px;
+    max-width: 783px;
     margin: 0 auto 24px;
     font-weight: 400;
     font-size: 16px;
@@ -616,8 +638,7 @@
 
   &__descr {
     width: 100%;
-    max-width: 410px;
-    margin-bottom: 44px;
+    max-width: 635px;
     @include media-lte(tablet) {
       max-width: 100%;
     }
@@ -691,7 +712,7 @@
   text-align: center;
   position: relative;
   @include media-lte(tablet) {
-    padding: 100px 0 100px;
+    padding: 70px 0;
   }
   &::before {
     content: '';
