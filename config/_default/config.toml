@@ -31,7 +31,7 @@ copyright = "SmplyTile, Inc. 2022"
     img_url_2 = "img/home-img-1.jpg"
     img_alt_2 = "Home family Image"
     btn_text = "Stay up to date"
-    btn_url = "/faq/"
+    btn_url = "/subscribe/"
 
   # Home why choose us
   [params.homeWhyUs]
@@ -113,9 +113,9 @@ copyright = "SmplyTile, Inc. 2022"
 # Menu
 [menu]
   [[menu.main]]
-    identifier = "buying"
-    name = "Buying"
-    url = "/buying/"
+    identifier = "what-is-my-title"
+    name = "What’s my title?"
+    url = "/what-is-my-title/"
     weight = 1
   [[menu.main]]
     identifier = "why-smplytitle"

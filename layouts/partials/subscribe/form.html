@@ -1,0 +1,26 @@
+<section class="s-contacts get-in-touch">
+  <div class="container">
+    <div class="s-contacts__wrap">
+      <h1 class="s-contacts__title">
+        <span>{{ .Title }}</span>
+      </h1>
+      <h2 class="s-contacts__descr">{{ .Description }}</h2>
+      <div class="contact-form">
+        <form action="#" id="subscribe-form" method="post">
+          <div class="form-control">
+            <input type="text" name="fullname" class="input-control form-item-js fullname-js" placeholder="Your Name">
+            <span class="input-error-message"></span>
+          </div>
+          <div class="form-control">
+            <input type="email" name="email" class="input-control form-item-js email-js" placeholder="Email">
+            <span class="input-error-message"></span>
+          </div>
+          <p class="form-message form-notif-js"></p>
+          <div class="form-btn">
+            <button type="submit" class="btn btn-black submit-btn-js">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -9,7 +9,7 @@
     padding: 290px 0 50px;
   }
   @include media-lte(tablet) {
-    padding: 150px 0 50px;
+    padding: 100px 0 10px;
   }
   &::before {
     content: '';
@@ -47,7 +47,7 @@
       line-height: 50px;
     }
     @include media-lte(tablet-xs) {
-      font-size: 46px;
+      font-size: 42px;
       text-align: center;
     }
   }
@@ -77,12 +77,13 @@
     }
     @include media-lte(tablet) {
       flex-direction: column;
+      margin-top: 25px;
     }
 
     .btn {
       margin-right: 36px;
       @include media-lte(tablet) {
-        margin: 0 0 25px;
+        margin: 0;
       }
     }
   }
@@ -189,7 +190,7 @@
   position: relative;
   padding: 98px 0 106px;
   @include media-lte(tablet) {
-    padding: 50px 0;
+    padding: 10px 0 30px;
   }
   &::before {
     content: '';
@@ -229,6 +230,7 @@
     @include media-lte(tablet) {
       flex: auto;
       width: 100%;
+      height: 250px;
       margin-bottom: 30px;
     }
     img {
@@ -267,12 +269,15 @@
       font-size: 16px;
       line-height: 150%;
       color: $black-2;
+      @include media-lte(tablet) {
+        margin-bottom: 15px;
+      }
       &:first-child {
         font-size: 36px;
         line-height: 50px;
         @include media-lte(tablet) {
-          font-size: 26px;
-          line-height: 36px;
+          font-size: 20px;
+          line-height: 30px;
         }
       }
     }
@@ -331,6 +336,7 @@
     }
     @include media-lte(tablet-xs) {
       margin-top: 50px;
+      height: 200px;
     }
     .question-card {
       width: calc(100% - 30px);
@@ -363,8 +369,8 @@
   z-index: 1;
   padding: 106px 0 140px;
   @include media-lte(tablet) {
-    padding-top: 50px;
-    padding-bottom: 100px;
+    padding-top: 0;
+    padding-bottom: 60px;
   }
   .s-title-md {
     margin-bottom: 58px;
@@ -403,6 +409,9 @@
 
   &__content {
     padding: 42px 20px 108px;
+    @include media-lte(tablet) {
+      padding: 25px 20px 30px;
+    }
   }
 
   // .costs-wrap__note
@@ -464,6 +473,9 @@
   width: 100%;
   max-width: 715px;
   margin: 0 auto 21px;
+  @include media-lte(tablet-xs) {
+   margin-bottom: 15px;
+  }
   &:first-child {
     #{$root}__title {
       color: $accent;
@@ -483,6 +495,9 @@
     font-size: 13px;
     line-height: 21px;
     color: $grey-light-2;
+    @include media-lte(tablet-xs) {
+      margin-bottom: 3px;
+    }
   }
 
   // .costs-item__progress-bar
@@ -519,7 +534,7 @@
   padding: 58px 0 180px;
   position: relative;
   @include media-lte(tablet) {
-    padding: 0 0 100px;
+    padding: 0 0 40px;
   }
 
   &::after {
@@ -598,7 +613,7 @@
   padding: 93px 0 89px;
   background: $grey-light-1;
   @include media-lte(tablet) {
-    padding: 85px 0;
+    padding: 55px 0;
   }
   .container {
     display: flex;
@@ -617,7 +632,9 @@
       line-height: 52px;
     }
     @include media-lte(tablet) {
-      line-height: 40px;
+      font-size: 23px;
+      line-height: 32px;
+      margin-bottom: 15px;
     }
   }
 
@@ -630,7 +647,7 @@
       width: 100%;
       flex: auto;
       padding-right: 0;
-      margin-top: 40px;
+      margin-top: 20px;
     }
   }
 
@@ -691,6 +708,7 @@
     
     @include media-lte(tablet) {
       width: 100%;
+      height: 288px;
       margin-bottom: 1px;
       flex: auto;
     }
@@ -712,7 +730,7 @@
   text-align: center;
   position: relative;
   @include media-lte(tablet) {
-    padding: 70px 0;
+    padding: 50px 0 30px;
   }
   &::before {
     content: '';
@@ -749,6 +767,9 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  @include media-lte(tablet) {
+    margin-top: 35px;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -783,6 +804,9 @@
   @include media-lte(desktop) {
     margin: 0 15px 30px;
   }
+  @include media-lte(tablet-xs) {
+    height: 120px;
+  }
 }
 
 
@@ -792,15 +816,21 @@
 
 .s-founder {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   background: $grey-light-1;
   padding: 58px 0 90px;
   border-radius: 24px 24px 0px 0px;
+  @include media-lte(tablet) {
+    padding: 35px 0 40px;
+  }
   .s-title-sm {
     width: 100%;
     max-width: 668px;
     margin-bottom: 24px;
     position: relative;
+    @include media-lte(tablet) {
+      font-size: 28px;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -812,6 +842,9 @@
       @include media-lte(desktop-lg) {
         left: -54px;
       }
+      @include media-lte(tablet) {
+        left: -36px;
+      }
     }
   }
 
@@ -820,7 +853,7 @@
   &__wrap {
     padding: 0 55px;
     @include media-lte(tablet) {
-      padding: 0 0 0 55px;
+      padding: 0 0 0 30px;
     }
   }
 
@@ -834,6 +867,9 @@
     line-height: 150%;
     color: $black-2;
     margin-bottom: 40px;
+    @include media-lte(tablet) {
+      margin-bottom: 25px;
+    }
   }
 
   // .s-founder__text
@@ -844,12 +880,18 @@
     font-size: 16px;
     line-height: 24px;
     color: $grey;
+    @include media-lte(tablet) {
+      margin-bottom: 20px;
+    }
   }
 
   // .s-founder__details
 
   &__details {
     margin-top: 40px;
+    @include media-lte(tablet) {
+      margin-top: 25px;
+    }
   }
 
   // .s-founder__details-name

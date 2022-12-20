@@ -252,13 +252,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Subscription form
 
-  const subscribeForm = document.querySelectorAll('.subscribe-form-js');
+  const subscribeForm = document.getElementById('subscribe-form');
 
   if(subscribeForm) {
-    for (let i = 0; i < subscribeForm.length; i++) {
-      const fields = ['subscribe-email-js'];
-      validateOnEntry(subscribeForm[i], fields);
-      validateOnSubmit(subscribeForm[i], fields, hubspotSubscriptioFormId);
-    }
+    validateOnEntry(subscribeForm, formFields);
+    validateOnSubmit(subscribeForm, formFields, hubspotSubscriptioFormId);
   }
 });

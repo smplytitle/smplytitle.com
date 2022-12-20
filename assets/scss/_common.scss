@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-control {
   margin-bottom: 36px;
   @include media-lte(tablet) {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
   }
 }
 
