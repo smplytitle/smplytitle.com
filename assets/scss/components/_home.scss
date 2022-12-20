@@ -9,7 +9,7 @@
     padding: 290px 0 50px;
   }
   @include media-lte(tablet) {
-    padding: 150px 0 50px;
+    padding: 100px 0 10px;
   }
   &::before {
     content: '';
@@ -33,10 +33,11 @@
 
   &__title {
     font-weight: 700;
-    font-size: 80px;
+    font-size: 70px;
     line-height: 80px;
     letter-spacing: -0.035em;
     color: $black-1;
+    text-align: left;
     @include media-lte(desktop-lg) {
       font-size: 64px;
       line-height: 64px;
@@ -46,7 +47,7 @@
       line-height: 50px;
     }
     @include media-lte(tablet-xs) {
-      font-size: 46px;
+      font-size: 42px;
       text-align: center;
     }
   }
@@ -76,12 +77,13 @@
     }
     @include media-lte(tablet) {
       flex-direction: column;
+      margin-top: 25px;
     }
 
     .btn {
       margin-right: 36px;
       @include media-lte(tablet) {
-        margin: 0 0 25px;
+        margin: 0;
       }
     }
   }
@@ -126,14 +128,15 @@
 
   &__title-group {
     position: relative;
-    max-width: 768px;
+    max-width: 800px;
     width: 100%;
-    margin: 0 auto;
+    margin-left: 250px;
     @include media-lte(wide) {
       display: flex;
       align-items: center;
       max-width: 100%;
       text-align: left;
+      margin-left: 0;
     }
   }
 
@@ -144,23 +147,34 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 227px;
+    width: 314px;
+    height: 209px;
     right: calc(100% + 55px);
-    top: 0;
+    top: 50%;
+    margin-top: -104px;
     @include media-lte(wide) {
       position: relative;
+      width: 226px;
+      height: 159px;
+      top: 0;
+      margin-top: 0;
       right: 0;
       flex-shrink: 0;
       margin-right: 35px;
     }
     @include media-lte(tablet) {
       width: 150px;
+      height: 100px;
       margin-right: 25px;
     }
     @include media-lte(tablet-xs) {
       display: none;
     }
     img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       border-radius: 27px 27px 27px 75px;
       @include media-lte(tablet) {
         border-radius: 20px 20px 20px 55px;
@@ -176,7 +190,7 @@
   position: relative;
   padding: 98px 0 106px;
   @include media-lte(tablet) {
-    padding-bottom: 70px;
+    padding: 10px 0 30px;
   }
   &::before {
     content: '';
@@ -216,6 +230,7 @@
     @include media-lte(tablet) {
       flex: auto;
       width: 100%;
+      height: 250px;
       margin-bottom: 30px;
     }
     img {
@@ -254,6 +269,17 @@
       font-size: 16px;
       line-height: 150%;
       color: $black-2;
+      @include media-lte(tablet) {
+        margin-bottom: 15px;
+      }
+      &:first-child {
+        font-size: 36px;
+        line-height: 50px;
+        @include media-lte(tablet) {
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
     }
   }
 
@@ -306,9 +332,11 @@
     height: 390px;
     @include media-lte(tablet) {
       margin-top: 120px;
+      height: 250px;
     }
     @include media-lte(tablet-xs) {
-      margin-top: 180px;
+      margin-top: 50px;
+      height: 200px;
     }
     .question-card {
       width: calc(100% - 30px);
@@ -341,7 +369,8 @@
   z-index: 1;
   padding: 106px 0 140px;
   @include media-lte(tablet) {
-    padding-top: 70px;
+    padding-top: 0;
+    padding-bottom: 60px;
   }
   .s-title-md {
     margin-bottom: 58px;
@@ -380,6 +409,9 @@
 
   &__content {
     padding: 42px 20px 108px;
+    @include media-lte(tablet) {
+      padding: 25px 20px 30px;
+    }
   }
 
   // .costs-wrap__note
@@ -441,6 +473,9 @@
   width: 100%;
   max-width: 715px;
   margin: 0 auto 21px;
+  @include media-lte(tablet-xs) {
+   margin-bottom: 15px;
+  }
   &:first-child {
     #{$root}__title {
       color: $accent;
@@ -460,6 +495,9 @@
     font-size: 13px;
     line-height: 21px;
     color: $grey-light-2;
+    @include media-lte(tablet-xs) {
+      margin-bottom: 3px;
+    }
   }
 
   // .costs-item__progress-bar
@@ -493,19 +531,10 @@
 
 .s-trust {
   text-align: center;
-  padding: 58px 0 228px;
+  padding: 58px 0 180px;
   position: relative;
   @include media-lte(tablet) {
-    padding: 0 0 100px;
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 467px;
-    height: 741px;
-    background: url("/img/figure-img-3.svg") no-repeat right center;
+    padding: 0 0 40px;
   }
 
   &::after {
@@ -514,8 +543,8 @@
     top: 120px;
     left: 0;
     right: 0;
-    width: 800px;
-    height: 290px;
+    width: 1254px;
+    height: 526px;
     margin: 0 auto;
     background: $purple-2;
     opacity: 0.6;
@@ -531,8 +560,7 @@
 
   .s-title-lg {
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto 10px;
+    margin: 0 auto 24px;
     line-height: 86px;
     position: relative;
     color: $black-3;
@@ -548,11 +576,20 @@
     }
   }
 
+  // s-trust__img
+
+  &__img {
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   // .s-trust__descr
 
   &__descr {
     width: 100%;
-    max-width: 726px;
+    max-width: 783px;
     margin: 0 auto 24px;
     font-weight: 400;
     font-size: 16px;
@@ -576,7 +613,7 @@
   padding: 93px 0 89px;
   background: $grey-light-1;
   @include media-lte(tablet) {
-    padding: 85px 0;
+    padding: 55px 0;
   }
   .container {
     display: flex;
@@ -595,7 +632,9 @@
       line-height: 52px;
     }
     @include media-lte(tablet) {
-      line-height: 40px;
+      font-size: 23px;
+      line-height: 32px;
+      margin-bottom: 15px;
     }
   }
 
@@ -608,7 +647,7 @@
       width: 100%;
       flex: auto;
       padding-right: 0;
-      margin-top: 40px;
+      margin-top: 20px;
     }
   }
 
@@ -616,8 +655,7 @@
 
   &__descr {
     width: 100%;
-    max-width: 410px;
-    margin-bottom: 44px;
+    max-width: 635px;
     @include media-lte(tablet) {
       max-width: 100%;
     }
@@ -670,6 +708,7 @@
     
     @include media-lte(tablet) {
       width: 100%;
+      height: 288px;
       margin-bottom: 1px;
       flex: auto;
     }
@@ -691,7 +730,7 @@
   text-align: center;
   position: relative;
   @include media-lte(tablet) {
-    padding: 100px 0 100px;
+    padding: 50px 0 30px;
   }
   &::before {
     content: '';
@@ -728,6 +767,9 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  @include media-lte(tablet) {
+    margin-top: 35px;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -762,6 +804,9 @@
   @include media-lte(desktop) {
     margin: 0 15px 30px;
   }
+  @include media-lte(tablet-xs) {
+    height: 120px;
+  }
 }
 
 
@@ -771,15 +816,21 @@
 
 .s-founder {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   background: $grey-light-1;
   padding: 58px 0 90px;
   border-radius: 24px 24px 0px 0px;
+  @include media-lte(tablet) {
+    padding: 35px 0 40px;
+  }
   .s-title-sm {
     width: 100%;
     max-width: 668px;
     margin-bottom: 24px;
     position: relative;
+    @include media-lte(tablet) {
+      font-size: 28px;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -791,6 +842,9 @@
       @include media-lte(desktop-lg) {
         left: -54px;
       }
+      @include media-lte(tablet) {
+        left: -36px;
+      }
     }
   }
 
@@ -799,7 +853,7 @@
   &__wrap {
     padding: 0 55px;
     @include media-lte(tablet) {
-      padding: 0 0 0 55px;
+      padding: 0 0 0 30px;
     }
   }
 
@@ -813,6 +867,9 @@
     line-height: 150%;
     color: $black-2;
     margin-bottom: 40px;
+    @include media-lte(tablet) {
+      margin-bottom: 25px;
+    }
   }
 
   // .s-founder__text
@@ -823,12 +880,18 @@
     font-size: 16px;
     line-height: 24px;
     color: $grey;
+    @include media-lte(tablet) {
+      margin-bottom: 20px;
+    }
   }
 
   // .s-founder__details
 
   &__details {
     margin-top: 40px;
+    @include media-lte(tablet) {
+      margin-top: 25px;
+    }
   }
 
   // .s-founder__details-name

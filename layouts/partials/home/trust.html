@@ -4,10 +4,16 @@
 {{ $btnText := .Site.Params.trust.btn_text }}
 {{ $btnUrl := .Site.Params.trust.btn_url }}
 
+{{ $imgUrl := .Site.Params.trust.img }}
+{{ $imgAlt := .Site.Params.trust.img_alt }}
+
 <section class="s-trust">
   <div class="container">
+    <div class="s-trust__img">
+      <img src="{{ $imgUrl }}" loading="lazy" width="188" height="187" alt="{{ $imgAlt }}">
+    </div>
     <h2 class="s-title-lg">{{ $title }}</h2>
     <p class="s-trust__descr">{{ $descr | safeHTML }}</p>
-    <a href="{{ $btnUrl }}" class="btn btn-purple-light btn-rounded">{{ $btnText }}</a>
+    <!--<a href="{{ $btnUrl }}" class="btn btn-purple-light btn-rounded">{{ $btnText }}</a>-->
   </div>
 </section>

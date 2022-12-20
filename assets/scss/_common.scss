@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-control {
   margin-bottom: 36px;
   @include media-lte(tablet) {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
   }
 }
 
@@ -84,6 +84,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   border: 1px solid transparent;
   appearance: none;
+  resize: none;
   &.input-error {
     border: 1px solid red!important;
     &:focus {

@@ -25,13 +25,13 @@ copyright = "SmplyTile, Inc. 2022"
 
   # Home top intro
   [params.homeIntro]
-    title = "What the heck is title insurance anyway?"
+    title = "Welcome to the future of title insurance."
     img_url_1 = "img/home-top-img.jpg"
     img_alt_1 = "For sale"
     img_url_2 = "img/home-img-1.jpg"
     img_alt_2 = "Home family Image"
-    btn_text = "Learn more about title insurnace"
-    btn_url = "/faq/"
+    btn_text = "Stay up to date"
+    btn_url = "/subscribe/"
 
   # Home why choose us
   [params.homeWhyUs]
@@ -39,8 +39,8 @@ copyright = "SmplyTile, Inc. 2022"
     title_right_part = "SmplyTitle?"
     img_url = "img/home-img-2.jpg"
     img_alt = "Why SmplyTitle image"
-    text_p_1 = "With so much going on around a home sale, we want to take the confusion and hassle out of the process and save you money."
-    text_p_2 = "By simply providing a few details about the size of a sale, we can instantly give you a comparative analysis of fees from multiple companies. And we can beat them all."
+    text_p_1 = "With so much going on around a home sale, we want to take the confusion and hassle out of the process and save your clients money."
+    text_p_2 = "At SmplyTitle we’re built as a digital first company. What does that mean for your clients? We’re focused on making everything as simple, clear and efficient as possible."
     btn_text = "Learn how we can help"
     btn_url = "/why-smplytitle/"
     # All features are defined in their own files.
@@ -80,8 +80,10 @@ copyright = "SmplyTile, Inc. 2022"
   
   # Home trust
   [params.trust]
-    title = "Transparency is trust"
-    description = "We got tired of complicated and unreadable title, escrow and closing documents. So we have made it simpler and clearer so <span>you can understand what you are paying for and why.</span>"
+    img = "img/home-img-5.png"
+    img_alt = "Home image"
+    title = "Attorney Opinion Letters"
+    description = "With the introduction of A.O.L’s to replace title insurance policies with Fannie Mae and Freddie Mac backed loans SmplyTitle has the ability to help your clients save even more money on their closing costs."
     btn_text = "Sign up for more news from us."
     btn_url = "/get-in-touch/"
 
@@ -111,9 +113,9 @@ copyright = "SmplyTile, Inc. 2022"
 # Menu
 [menu]
   [[menu.main]]
-    identifier = "buying"
-    name = "Buying"
-    url = "/buying/"
+    identifier = "what-is-my-title"
+    name = "What’s my title?"
+    url = "/what-is-my-title/"
     weight = 1
   [[menu.main]]
     identifier = "why-smplytitle"

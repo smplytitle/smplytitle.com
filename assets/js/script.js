@@ -130,8 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function getFormData(form) {
-    const inputs = form.getElementsByTagName('input');
-    return Object.values(inputs).reduce((obj,field) => { obj[field.name] = field.value; return obj }, {})
+    const formItems = form.querySelectorAll('.form-item-js');
+    return Object.values(formItems).reduce((obj,field) => { obj[field.name] = field.value; return obj }, {})
   }
 
   function transformData(data) {
@@ -252,13 +252,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Subscription form
 
-  const subscribeForm = document.querySelectorAll('.subscribe-form-js');
+  const subscribeForm = document.getElementById('subscribe-form');
 
   if(subscribeForm) {
-    for (let i = 0; i < subscribeForm.length; i++) {
-      const fields = ['subscribe-email-js'];
-      validateOnEntry(subscribeForm[i], fields);
-      validateOnSubmit(subscribeForm[i], fields, hubspotSubscriptioFormId);
-    }
+    validateOnEntry(subscribeForm, formFields);
+    validateOnSubmit(subscribeForm, formFields, hubspotSubscriptioFormId);
   }
 });

@@ -7,7 +7,7 @@
   position: relative;
   padding: 224px 0 128px;
   @include media-lte(tablet) {
-    padding: 175px 0 90px;
+    padding: 100px 0 50px;
   }
   &::before {
     content: '';
@@ -58,8 +58,8 @@
     line-height: 70px;
     letter-spacing: -0.015em;
     color: $black-2;
-    @include media-lte(tablet-xs) {
-      font-size: 52px;
+    @include media-lte(tablet) {
+      font-size: 42px;
       line-height: 52px;
     }
     &::before {

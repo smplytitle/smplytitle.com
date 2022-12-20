@@ -6,7 +6,7 @@
   position: relative;
   padding-top: 200px;
   @include media-lte(tablet) {
-    padding-top: 160px;
+    padding-top: 100px;
   }
   &::before {
     content: '';
@@ -35,10 +35,10 @@
       font-size: 72px;
       line-height: 88px;
     }
-    @include media-lte(tablet-xs) {
-      font-size: 46px;
-      line-height: 62px;
-      margin-bottom: 50px;
+    @include media-lte(tablet) {
+      font-size: 42px;
+      line-height: 52px;
+      margin-bottom: 40px;
     }
     &::before {
       content: '';
@@ -216,6 +216,9 @@
   font-size: 16px;
   line-height: 24px;
   color: $grey;
+  @include media-lte(tablet) {
+    color: $black-4;
+  }
   p {
     margin: 0 0 8px;
   }

@@ -1,5 +1,5 @@
 ---
-title: "What’s my title?"
+title: "What is title?"
 SEODescription: >
   SmplyTitle is the only title and escrow closing company that connects directly with the buyer and seller.
   What does that mean? It means you get better pricing, transparency and clear understanding
