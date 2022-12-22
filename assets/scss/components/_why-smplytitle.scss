@@ -36,10 +36,10 @@
 
   &__title {
     position: relative;
-    margin-bottom: 55px;
+    margin-bottom: 45px;
     font-weight: 700;
-    font-size: 120px;
-    line-height: 130px;
+    font-size: 80px;
+    line-height: 90px;
     letter-spacing: -0.035em;
     color: $black-2;
     @include media-lte(desktop-lg) {
@@ -86,8 +86,8 @@
     max-width: 849px;
     margin-left: 140px;
     font-weight: 400;
-    font-size: 36px;
-    line-height: 50px;
+    font-size: 26px;
+    line-height: 40px;
     letter-spacing: -0.015em;
     color: $black-2;
     @include media-lte(desktop-lg) {

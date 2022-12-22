@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="smply-accordion-panel faq-accordion-panel">
-            <p>{{ .answer }}</p>
+            {{ .answer | safeHTML }}
           </div>
         </div>
       {{ end }}
