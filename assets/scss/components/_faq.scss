@@ -83,7 +83,7 @@
   ========================================================================== */
 
 .s-faq-items {
-  padding-bottom: 100px;
+  padding-bottom: 70px;
   @include media-lte(tablet-xs) {
     padding-bottom: 50px;
   }
@@ -98,6 +98,18 @@
     z-index: 2;
     @include media-lte(desktop) {
       margin-left: 0;
+    }
+  }
+
+  .s-faq-btn {
+    margin-top: 50px;
+    text-align: center;
+    @include media-lte(tablet) {
+      margin-top: 30px;
+    }
+    .btn {
+      width: 100%;
+      max-width: 267px;
     }
   }
 }
@@ -230,9 +242,10 @@
     }
   }
   a {
-    color: $accent;
+    text-decoration: underline;
+    color: $grey;
     &:hover {
-      opacity: 0.85;
+      color: $accent;
     }
   }
 }

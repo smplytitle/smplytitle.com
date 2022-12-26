@@ -6,6 +6,14 @@
           <p>{{ .Params.secondInfoSection.text }}</p>
           <span>{{ .Params.secondInfoSection.author }}</span>
         </div>
+        <div class="s-why-second-info__question-card">
+          {{ partial "common/question-card.html" (
+            dict "imgPath" "/img/person-img-1.jpg"
+            "text" "Have a question you want answered?"
+            "btnUrl" "/contact-us/"
+            "btnText" "Send us a note"
+          ) }}
+        </div>
       </div>
       <div class="s-why-second-info__right">
         <img src="{{ .Params.secondInfoSection.img }}" loading="lazy" width="453" height="720" alt="Image">

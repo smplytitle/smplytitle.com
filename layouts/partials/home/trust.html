@@ -1,9 +1,6 @@
 {{ $title := .Site.Params.trust.title }}
 {{ $descr := .Site.Params.trust.description }}
 
-{{ $btnText := .Site.Params.trust.btn_text }}
-{{ $btnUrl := .Site.Params.trust.btn_url }}
-
 {{ $imgUrl := .Site.Params.trust.img }}
 {{ $imgAlt := .Site.Params.trust.img_alt }}
 
@@ -14,6 +11,13 @@
     </div>
     <h2 class="s-title-lg">{{ $title }}</h2>
     <p class="s-trust__descr">{{ $descr | safeHTML }}</p>
-    <!--<a href="{{ $btnUrl }}" class="btn btn-purple-light btn-rounded">{{ $btnText }}</a>-->
+    <div class="s-trust__question-card">
+      {{ partial "common/question-card.html" (
+          dict "imgPath" "img/person-img-1.jpg"
+          "text" "Have a question you want answered?"
+          "btnUrl" "/contact-us/"
+          "btnText" "Send us a note"
+        ) }}
+    </div>
   </div>
 </section>

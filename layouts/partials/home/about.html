@@ -6,20 +6,15 @@
 
 {{ $bigImgUrl := .Site.Params.about.big_img | absURL }}
 {{ $bigImgAlt := .Site.Params.about.big_img_alt }}
-{{ $smallImgUrl := .Site.Params.about.small_img | absURL }}
-{{ $smallImgAlt := .Site.Params.about.small_img_alt }}
 
 <section class="s-about">
   <div class="container">
     <div class="s-about__left">
       <h2 class="s-title-sm">{{ $title }}</h2>
       <p class="s-about__descr">{{ $descr | safeHTML }}</p>
-      <!--<div class="s-about__bottom">
-        <div class="s-about__bottom-img">
-          <img src="{{ $smallImgUrl }}" loading="lazy" width="60" height="60" alt="{{ $smallImgAlt }}">
-        </div>
-        <a href="{{ $btnUrl }}" class="btn btn-primary btn-rounded">{{ $btnText }}</a>
-      </div>-->
+      <div class="s-about__bottom">
+        <a href="{{ $btnUrl }}" class="s-about__link">{{ $btnText }}</a>
+      </div>
     </div>
     <div class="s-about__right">
       <img src="{{ $bigImgUrl }}" loading="lazy" width="370" height="370" alt="{{ $bigImgAlt }}">

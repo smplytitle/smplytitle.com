@@ -108,7 +108,7 @@
 .s-why-first-info {
   position: relative;
   z-index: 3;
-  padding: 170px 0 100px;
+  padding: 80px 0 50px;
   @include media-lte(desktop) {
     padding: 40px 0;
   }
@@ -202,7 +202,7 @@
   // .s-why-first-info__arrows
 
   &__arrows {
-    margin-top: 76px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -216,18 +216,17 @@
   ========================================================================== */
 
 .s-why-second-info {
-  padding: 35px 0 100px;
-  @include media-lte(desktop) {
-    padding: 0 0 100px;
-  }
+  padding: 35px 0 50px;
   @include media-lte(tablet) {
     padding: 0 0 40px;
   }
   // .s-why-second-info__wrap
 
   &__wrap {
+    position: relative;
+    z-index: 3;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     @include media-lte(tablet-xs) {
       flex-wrap: wrap;
@@ -235,11 +234,38 @@
     }
   }
 
+  // .s-why-second-info__question-card
+
+  &__question-card {    
+    .question-card {
+      justify-content: center;
+      right: auto;
+      bottom: 0;
+      width: calc(100% + 35px);
+      @include media-lte(desktop) {
+        width: 100%;
+        bottom: -130px;
+      }
+      @include media-lte(tablet-xs) {
+        bottom: 0;
+        position: relative;
+        margin-top: 20px;
+      }
+    }
+  }
+
   // .s-why-second-info__left
 
   &__left {
+    position: relative;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: -100px;
+    @include media-lte(desktop) {
+      position: static;
+    }
     @include media-lte(tablet-xs) {
       flex: auto;
       width: 100%;
@@ -326,12 +352,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 136px;
+    margin-top: 60px;
     @include media-lte(desktop) {
-      margin-top: 100px;
+      margin-top: 170px;
     }
-    @include media-lte(tablet) {
-      margin-top: 30px;
+    @include media-lte(tablet-xs) {
+      margin-top: 40px;
     }
   }
 }
@@ -341,10 +367,7 @@
 
 
 .s-why-items {
-  padding: 73px 0 113px;
-  @include media-lte(desktop) {
-    padding: 0 0 100px;
-  }
+  padding: 40px 0 60px;
   @include media-lte(tablet) {
     padding: 0 0 40px;
   }
@@ -361,6 +384,20 @@
     }
     @include media-lte(tablet-xs) {
       margin: 0;
+    }
+  }
+
+  // .s-why-items__btn 
+
+  &__btn {
+    margin-top: 20px;
+    text-align: center;
+    @include media-lte(tablet) {
+      margin-top: 30px;
+    }
+    .btn {
+      width: 100%;
+      max-width: 267px;
     }
   }
 
