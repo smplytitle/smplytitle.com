@@ -82,7 +82,8 @@
         justify-content: flex-start;
       }
       li {
-        margin-left: 60px;
+        margin-left: 40px;
+        margin-bottom: 10px;
         &.active {
           a {
             color: $accent;
@@ -92,7 +93,6 @@
           margin-left: 35px;
         }
         @include media-lte(tablet) {
-          margin-bottom: 10px;
           margin-left: 20px;
           margin-right: 20px;
         }

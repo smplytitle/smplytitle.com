@@ -15,9 +15,9 @@
         <nav class="site-footer__nav">
           <ul>
             {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
+            {{ range .Site.Menus.footer }}
               {{ $active := in $currentPage.RelPermalink .URL }}
-              <li class="{{ if $active }}active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
+              <li {{ if $active }}class="active"{{ end }}><a href="{{ .URL }}">{{ .Name }}</a></li>
             {{ end }}
           </ul>
         </nav>

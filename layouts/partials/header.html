@@ -20,7 +20,7 @@
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
               {{ $active := in $currentPage.RelPermalink .URL }}
-              <li class="{{ if $active }}active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
+              <li {{ if $active }}class="active"{{ end }}><a href="{{ .URL }}">{{ .Name }}</a></li>
             {{ end }}
           </ul>
         </nav>
