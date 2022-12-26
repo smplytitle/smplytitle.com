@@ -134,4 +134,34 @@ copyright = "SmplyTile, Inc. 2023"
     identifier = "contact-us"
     name = "Contact us"
     url = "/contact-us/"
+    weight = 5
+  [[menu.footer]]
+    identifier = "what-is-my-title"
+    name = "What’s my title?"
+    url = "/what-is-my-title/"
+    weight = 1
+  [[menu.footer]]
+    identifier = "why-smplytitle"
+    name = "Why SmplyTitle"
+    url = "/why-smplytitle/"
+    weight = 2
+  [[menu.footer]]
+    identifier = "faq"
+    name = "FAQ"
+    url = "/faq/"
+    weight = 3
+  [[menu.footer]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
     weight = 4
+  [[menu.footer]]
+    identifier = "contact-us"
+    name = "Contact us"
+    url = "/contact-us/"
+    weight = 5
+  [[menu.footer]]
+    identifier = "stay-in-touch"
+    name = "Stay in touch"
+    url = "/subscribe/"
+    weight = 6
