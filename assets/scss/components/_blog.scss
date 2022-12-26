@@ -58,7 +58,7 @@
   ========================================================================== */
 
 .s-posts {
-  padding-bottom: 174px;
+  padding-bottom: 70px;
   @include media-lte(tablet) {
     padding-bottom: 50px;
   }
@@ -68,6 +68,18 @@
   &__wrap {
     position: relative;
     z-index: 1;
+  }
+
+  .s-posts-btn {
+    margin-top: 60px;
+    text-align: center;
+    @include media-lte(tablet) {
+      margin-top: 30px;
+    }
+    .btn {
+      width: 100%;
+      max-width: 267px;
+    }
   }
 }
 

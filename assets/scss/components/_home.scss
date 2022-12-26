@@ -2,12 +2,9 @@
   ========================================================================== */
 
 .s-home-top {
-  padding: 290px 0 98px;
+  padding: 200px 0 50px;
   text-align: center;
   position: relative;
-  @include media-lte(desktop) {
-    padding: 290px 0 50px;
-  }
   @include media-lte(tablet) {
     padding: 100px 0 10px;
   }
@@ -81,10 +78,8 @@
     }
 
     .btn {
-      margin-right: 36px;
-      @include media-lte(tablet) {
-        margin: 0;
-      }
+      width: 100%;
+      max-width: 236px;
     }
   }
 
@@ -188,7 +183,7 @@
 
 .s-why-us {
   position: relative;
-  padding: 98px 0 106px;
+  padding: 50px 0;
   @include media-lte(tablet) {
     padding: 10px 0 30px;
   }
@@ -294,8 +289,25 @@
       align-items: flex-start;
     }
 
+    @include media-lte(tablet) {
+      margin-top: 10px;
+    }
+
     .btn {
       width: 211px;
+    }
+  }
+
+  // .s-why-us__link
+
+  &__link {
+    color: $accent;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    &:hover {
+      opacity: 0.8;
     }
   }
 
@@ -318,20 +330,16 @@
 // .s-question__img-big
 
 .s-question {
-  padding: 0 0 100px;
-  @include media-lte(desktop) {
-    padding: 0 0 40px;
-  }
+  padding: 0 0 50px;
   &__img-big {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 130px;
+    margin-top: 65px;
     width: 100%;
     height: 390px;
     @include media-lte(tablet) {
-      margin-top: 120px;
       height: 250px;
     }
     @include media-lte(tablet-xs) {
@@ -367,10 +375,9 @@
 .s-costs {
   position: relative;
   z-index: 1;
-  padding: 106px 0 140px;
+  padding: 50px 0 70px;
   @include media-lte(tablet) {
-    padding-top: 0;
-    padding-bottom: 60px;
+    padding: 30px 0 60px;
   }
   .s-title-md {
     margin-bottom: 58px;
@@ -531,7 +538,7 @@
 
 .s-trust {
   text-align: center;
-  padding: 58px 0 180px;
+  padding: 30px 0 90px;
   position: relative;
   @include media-lte(tablet) {
     padding: 0 0 40px;
@@ -540,7 +547,7 @@
   &::after {
     content: '';
     position: absolute;
-    top: 120px;
+    top: 0;
     left: 0;
     right: 0;
     width: 1254px;
@@ -598,6 +605,21 @@
     color: $black-3;
     span {
       color: $accent;
+    }
+  }
+
+  // .s-trust__question-card
+
+  &__question-card {
+    width: 100%;
+    max-width: 668px;
+    margin: 65px auto 0;
+    @include media-lte(tablet) {
+      margin-top: 20px;
+    }
+    .question-card {
+      position: relative;
+      background-color: $grey-light-1;
     }
   }
 }
@@ -669,9 +691,19 @@
   &__bottom {
     display: flex;
     align-items: center;
-    padding-left: 24px;
-    @include media-lte(desktop) {
-      padding-left: 0;
+    margin-top: 24px;
+  }
+
+  // .s-about__link
+
+  &__link {
+    color: $accent;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    &:hover {
+      opacity: 0.8;
     }
   }
 
@@ -726,7 +758,7 @@
   ========================================================================== */
 
 .s-partners {
-  padding: 210px 0 206px;
+  padding: 105px 0 103px;
   text-align: center;
   position: relative;
   @include media-lte(tablet) {
@@ -818,7 +850,7 @@
   position: relative;
   z-index: 3;
   background: $grey-light-1;
-  padding: 58px 0 90px;
+  padding: 58px 0 45px;
   border-radius: 24px 24px 0px 0px;
   @include media-lte(tablet) {
     padding: 35px 0 40px;
@@ -916,5 +948,16 @@
     display: flex;
     align-items: center;
     margin-top: 24px;
+  }
+
+  // .s-founder__btn
+
+  &__btn {
+    text-align: center;
+    margin-top: 20px;
+    .btn {
+      width: 100%;
+      max-width: 236px;
+    }
   }
 }

@@ -1,7 +1,7 @@
 baseURL = "https://cosmic-crostata-81ad2e.netlify.app"
 languageCode = "en-us"
 title = "SmplyTitle"
-copyright = "SmplyTile, Inc. 2022"
+copyright = "SmplyTile, Inc. 2023"
 
 [markup]
   [markup.goldmark]
@@ -41,7 +41,7 @@ copyright = "SmplyTile, Inc. 2022"
     img_alt = "Why SmplyTitle image"
     text_p_1 = "With so much going on around a home sale, we want to take the confusion and hassle out of the process and save your clients money."
     text_p_2 = "At SmplyTitle we’re built as a digital first company. What does that mean for your clients? We’re focused on making everything as simple, clear and efficient as possible."
-    btn_text = "Learn how we can help"
+    btn_text = "Learn more about our approach..."
     btn_url = "/why-smplytitle/"
     # All features are defined in their own files.
     # You can find example items at data/features.
@@ -56,6 +56,8 @@ copyright = "SmplyTile, Inc. 2022"
     company_name = "SmplyTitle"
     img_url = "img/sign.png" 
     img_alt = "CEO & Founder sign image"
+    btn_text = "Stay up to date"
+    btn_url = "/subscribe/"
 
   # Home costs
   [params.costs]
@@ -84,8 +86,6 @@ copyright = "SmplyTile, Inc. 2022"
     img_alt = "Home image"
     title = "Attorney Opinion Letters"
     description = "With the introduction of A.O.L’s to replace title insurance policies with Fannie Mae and Freddie Mac backed loans SmplyTitle has the ability to help your clients save even more money on their closing costs."
-    btn_text = "Sign up for more news from us."
-    btn_url = "/get-in-touch/"
 
   # Home about company
   [params.about]
@@ -95,8 +95,6 @@ copyright = "SmplyTile, Inc. 2022"
     btn_url = "/why-smplytitle/"
     big_img = "img/home-img-3.jpg"
     big_img_alt = "Home image"
-    small_img = "img/home-img-4.jpg"
-    small_img_alt = "House image"
   
   # Home partners
   [params.partners]

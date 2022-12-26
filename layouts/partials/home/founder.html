@@ -7,6 +7,9 @@
 {{ $textP1 := .Site.Params.founder.text_p_1 }}
 {{ $textP2 := .Site.Params.founder.text_p_2 }}
 
+{{ $btnText := .Site.Params.founder.btn_text }}
+{{ $btnUrl := .Site.Params.founder.btn_url }}
+
 {{ $author := .Site.Params.founder.author }}
 {{ $company_name := .Site.Params.founder.company_name }}
 
@@ -25,6 +28,11 @@
           <img src="{{ $imgUrl }}" loading="lazy" alt="{{ $imgAlt }}">
         </div>
       </div>
+    </div>
+    <div class="s-founder__btn">
+      <a href="{{ $btnUrl }}" class="btn btn-primary btn-rounded">
+        {{ $btnText }}
+      </a>
     </div>
   </div>
 </section>
